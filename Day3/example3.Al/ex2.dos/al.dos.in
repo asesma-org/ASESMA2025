@@ -1,0 +1,7 @@
+&DOS
+
+outdir = './tmp',
+prefix='al',
+fildos='dos.dat',
+/
+

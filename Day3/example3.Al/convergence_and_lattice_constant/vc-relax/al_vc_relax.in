@@ -1,0 +1,39 @@
+&CONTROL
+  calculation= 'vc-relax',
+  prefix= 'al',
+  outdir= './tmp/'
+  pseudo_dir = '../../pseudo'
+  etot_conv_thr= 1e-6,
+  forc_conv_thr= 1e-5
+/
+
+&SYSTEM
+  ibrav=  2,
+  celldm(1)= 7.652,
+  nat=  1,
+  ntyp= 1,
+  ecutwfc = 16,
+  occupations= 'smearing',
+  smearing= 'gaussian',
+  degauss= 0.01
+/
+
+&ELECTRONS
+  conv_thr= 1e-8
+/
+
+&IONS
+/
+
+&CELL
+  cell_dofree= 'ibrav'
+/
+
+ATOMIC_SPECIES
+  Al 26.981 Al.pz-vbc.UPF
+
+ATOMIC_POSITIONS (alat)
+  Al 0.00 0.00 0.00
+
+K_POINTS (automatic)
+  10 10 10 1 1 1
