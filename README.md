@@ -2,7 +2,7 @@
 
 Website of the event: https://indico.ictp.it/event/10846/overview
 
-This is folder contains a hands-on based on density-functional theory (DFT), density-functional perturbation theory (DFPT) and beyond using Quantum ESPRESSO [1], FHI-aims [2], Siesta [3], Yambo [4], and otherscodes. 
+This is a hands-on based on density-functional theory (DFT), density-functional perturbation theory (DFPT) and beyond using Quantum ESPRESSO [1], FHI-aims [2], Siesta [3], Yambo [4], and otherscodes. 
 
 ## The hands-on consists of two parts:
  - [Basic](Basic)
