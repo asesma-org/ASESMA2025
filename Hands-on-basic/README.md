@@ -5,8 +5,8 @@ In each subfolder you will find a file README.md with the basic instructions on 
 # Exercises
 
  - [Day1](Day1/README.md): Intro to Linux, Xmgrace, Xcrysden, etc.
- - [Day2](Day2/README.md): Intro to Quantum ESPRESSO - Total energy, k points, cutoff, etc.
- - [Day3](Day3/README.md): Smearing, metals (band structure and DOS)
- - [Day4](Day4/README.md): Advanced functionals (DFT+U, VdW, meta-GGA, hybrids)
- - [Day5](Day5/README.md): Phonons
+ - [Day2](Day2/README.md): Total energy, cutoff, convergence
+ - [Day3](Day3/README.md): Smearing, k points sampling, metals, xc functionals (LDA and GGA)
+ - [Day4](Day4/README.md): Forces, relaxation, phonons
+ - [Day5](Day5/README.md): Molecular dynamics
 
