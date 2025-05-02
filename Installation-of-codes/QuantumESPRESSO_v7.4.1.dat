@@ -1,0 +1,27 @@
+1. Download QE v7.4.1 from Gitlab:
+   https://gitlab.com/QEF/q-e/-/tags
+
+2. Uncompress the file:
+   tar xvf qe-7.4.1.tar
+
+3. Install the Gfortran compiler:
+   sudo apt update
+   sudo apt install gfortran
+
+4. Install OpenMPI:
+   sudo apt install openmpi-bin libopenmpi-dev
+
+5. Configure QE:
+   ./configure MPIF90=mpif90 F90=gfortran BLAS_LIBS="-lblas" LAPACK_LIBS="-llapack"
+
+6. Install various codes of QE:
+   make all
+
+7. Add the path to executables to the environment:
+   vi ~/.bashrc
+   export PATH=$PATH:<path-to-qe-bin>
+   save a close the file
+   source ~/.bashrc
+
+8. Test:
+   type pw.x in a terminal
