@@ -4,8 +4,7 @@
 ### Topics of Day-2 hands-on session
 
 - SCF + basic post-processing
-- basics of python
-- convergence tests, extracting phyiscal information,
+- convergence tests, extracting physical information
 
 -----------
 **Exercise 1:** Benzene molecule: basic `pw.x` SCF calculation +

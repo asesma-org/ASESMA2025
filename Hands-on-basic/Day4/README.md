@@ -1,6 +1,6 @@
 # Exercises
 
- - [Exercise 1](exercise1/README.md): DFT+U for CoO
- - [Exercise 2](exercise2/README.md): Hybrid functional PBE0 for Si
- - [Exercise 3](exercise3/README.md): Van der Waals functionals for graphite
- - [Exercise 4](exercise4/README.md): meta-GGA (SCAN) for Si and Fe
+ - [Exercise 1](exercise1/README.md): Phonons at Gamma in non-polar materials
+ - [Exercise 2](exercise2/README.md): Phonons at Gamma in polar materials
+ - [Exercise 3](exercise2/README.md): Phonons dispersion in non-polar materials
+ - [Exercise 4](exercise2/README.md): Phonons dispersion in polar materials
