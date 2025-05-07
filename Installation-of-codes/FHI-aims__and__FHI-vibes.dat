@@ -1,0 +1,101 @@
+ 1) Contact Christian Carbogno (carbogno@fhi-berlin.mpg.de) and then create an account at:
+	https://fhi-aims.org/get-the-code-menu/aimsclub-registration
+
+ 2) Login at https://fhi-aims.org/ and download the source tarball of the latest release (fhi-aims.250320.tgz) from:
+	https://fhi-aims.org/get-the-code-menu/downloads 
+
+ 3) Untar the compressed archive:
+	>> tar -xzvf fhi-aims.250320.tgz
+    and enter respective directory, i.e., 
+	>> cd fhi-aims.250320
+
+
+ 4) Install compilers and libraries:
+	>> sudo apt update
+	>> sudo apt install build-essential                 # gcc and g++
+	>> sudo apt install gfortran                        # gfortran
+	>> sudo apt install openmpi-bin libopenmpi-dev	 # openmpi
+	>> sudo apt install liblapack-dev                   # lapack
+	>> sudo apt install libscalapack-openmpi-dev        # scalapack
+	>> sudo apt install cmake                           # cmake       
+
+ 5) Create a cmake build configuration file that points to the compilers and librariers installed above, e.g. here called settings.cmake
+
+	>> cat settings.cmake
+	>  set(CMAKE_Fortran_COMPILER  mpif90                         CACHE STRING "")
+	>  set(CMAKE_Fortran_FLAGS    "-O3 -ffree-line-length-none"   CACHE STRING "")
+	>  set(Fortran_MIN_FLAGS      "-O0 -ffree-line-length-none"   CACHE STRING "")
+	>  set(CMAKE_C_COMPILER        mpicc                          CACHE STRING "")
+	>  set(CMAKE_C_FLAGS          "-O2"                           CACHE STRING "")
+	>  set(CMAKE_CXX_COMPILER      mpic++                         CACHE STRING "")
+	>  set(CMAKE_CXX_FLAGS        "-O2 -fPIE"                     CACHE STRING "")
+	>  set(LIB_PATHS              "/usr/lib/x86_64-linux-gnu"     CACHE STRING "" FORCE)
+	>  set(LIBS                   "lapack blas scalapack-openmpi" CACHE STRING "" FORCE)
+	>  set(USE_MPI                 ON                             CACHE BOOL "" FORCE)
+	>  set(USE_SCALAPACK           ON                             CACHE BOOL "" FORCE)
+	>  set(USE_LIBXC               ON                             CACHE BOOL "" FORCE)
+	>  set(USE_HDF5                OFF                            CACHE BOOL "" FORCE)
+	>  set(USE_RLSY                ON                             CACHE BOOL "" FORCE)
+
+ 6) Create a build directory and execute cmake in there:
+	>> mkdir build
+	>> cd build
+	>> cmake -C ../settings.cmake ../
+	>  loading initial cache file ../settings.cmake
+	>  -- FHI-aims version: 250320
+	>  -- The Fortran compiler identification is GNU 9.4.0
+	>  [...] 
+	>  -- Configuring done
+	>  -- Generating done
+	>  -- Build files have been written to: /home/.../fhi-aims.250320/build
+
+ 7) Build the code using <NCPUs> in parallel: 
+        >> make -j <NCPUs>
+        >  
+	>  Scanning dependencies of target MatrixSwitch
+	>  Scanning dependencies of target fortjson
+	>  Scanning dependencies of target elpa
+	>  Scanning dependencies of target NTPoly
+	>  Scanning dependencies of target aims9
+	>  Scanning dependencies of target autoGR
+	>  Scanning dependencies of target mctc-lib-lib
+	>  Scanning dependencies of target xc
+	>  [  0%] Building Fortran object external_libraries/elsi_interface/external/FortJSON/CMakeFiles/fortjson.dir/src/fjson_precision.f90.o
+	>  [  0%] Building Fortran object external_libraries/elsi_interface/external/libOMM/CMakeFiles/MatrixSwitch.dir/src/MatrixSwitch/MatrixSwitch_ops.f90.o
+	>  [  0%] Building Fortran object external_libraries/elsi_interface/external/libOMM/CMakeFiles/MatrixSwitch.dir/src/MatrixSwitch/ms_mpifh.f90.o
+        >  [....]
+        >  [....]
+	>  [100%] Linking CXX static library libaims5.a
+	>  [100%] Built target aims5
+	>  Scanning dependencies of target aims
+	>  [100%] Building Fortran object src/CMakeFiles/aims.dir/main.f90.o
+	>  [100%] Building Fortran object src/CMakeFiles/aims.dir/aims.f90.o
+	>  [100%] Linking Fortran executable ../aims.250320.scalapack.mpi.x
+	>  [100%] Built target aims
+
+ 8) Now install FHI-vibes:
+
+    8a) Clone the repo and change to the folder
+	>> git clone https://gitlab.com/vibes-developers/vibes.git
+	>> cd vibes
+
+    8b) Install build requirements:
+	>> pip install numpy setuptools
+
+    8c) Install FHI-vibes:
+	>> pip install .
+
+    8d) Configure FHI-vibes to find the FHI-aims executable and basis sets downloaded and compiled before:
+        >> vibes template configuration vibes > ~/.vibesrc
+        Edit the configuration file as .vibesrc  so that
+        >> basissetloc  = /path/to/fhi-aims.250320/species_defaults/defaults_2020/ 
+        >> aims_command = mpirun -np <NCPUS> /path/to/fhi-aims.250320/build/aims.250320.scalapack.mpi.x
+
+        Obviously, <NCPUS> should be changed to the number of cores available on the machine.
+
+
+ ==> More information regarding FHI-aims compilation   can be found in the FHI-aims manual and on the Wiki: https://aims-git.rz-berlin.mpg.de
+ ==> More information regarding FHI-vibes installation can be found at https://vibes-developers.gitlab.io/vibes/
+ ==> Also fee free to contact Christian Carbogno (carbogno@fhi-berlin.mpg.de) in case of question / problems.
+
+
