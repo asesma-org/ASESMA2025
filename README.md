@@ -2,11 +2,7 @@
 
 Website of the event: https://indico.ictp.it/event/10846/overview
 
-This is a collection of lectures and hands-on based on density-functional theory (DFT), density-functional perturbation theory (DFPT) and beyond using Quantum ESPRESSO [1], FHI-aims [2], Siesta [3], and otherscodes. 
-
-## Lectures:
- - [Lectures-basic](Lectures-basic)
- - [Lectures-advanced](Lectures-advanced)
+This is a collection of lectures and hands-on based on density-functional theory (DFT), density-functional perturbation theory (DFPT) and beyond using Quantum ESPRESSO [1], FHI-aims [2], Siesta [3], and other codes. 
 
 ## The hands-on consists of two parts:
  - [Hands-on-basic](Hands-on-basic)
