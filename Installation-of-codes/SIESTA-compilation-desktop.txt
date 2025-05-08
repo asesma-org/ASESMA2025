@@ -1,0 +1,143 @@
+INSTRUCTIONS TO:
+
+- Clone the master version of SIESTA. 
+If this version changes in the future, you can automatically update it 
+going to the proper directory and typing "git pull"
+
+- Compile SIESTA and all the utilities in parallel with 
+PSML, NETCDF, and WANNIER90
+
+This has been succesfully tested on a desktop running:
+Hewlett-Packard HP Compaq Pro 6300 MT
+8.0 Gb of memory 
+Intel Core i5-3470 CPU @ 3.20 GHz x 4
+Ubuntu 22.04.3 LTS
+
+also tested on 
+
+Ubuntu 24.04.1 LTS
+
+--------------------------------------------
+ Required libraries before the installation:
+--------------------------------------------
+
+ If you are superuser, then you can install the libraries once 
+ and for all the users in the machine. 
+
+ Might be the administrator has installed them for you, 
+ and the following commands are not necessary.
+
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get dist-upgrade
+
+$ sudo apt install git
+$ sudo apt install cmake
+$ sudo apt install pkg-config
+$ sudo apt install gfortran
+$ sudo apt install libxc9
+$ sudo apt install libxc-dev
+$ sudo apt install libblas3
+$ sudo apt install libblas-dev
+$ sudo apt install liblapack3
+$ sudo apt install liblapack-dev
+$ sudo apt install libopenmpi-dev
+$ sudo apt install libscalapack-openmpi2.1
+  (depending on the version of Ubuntu: 
+   $ sudo apt install libscalapack-openmpi2.2)
+$ sudo apt install libscalapack-openmpi-dev
+$ sudo apt install libreadline-dev
+$ sudo apt install lua-readline
+$ sudo apt install lua-readline-dev
+$ sudo apt install libnetcdf-mpi-dev
+$ sudo apt install libnetcdff-dev
+$ sudo apt install libfftw3-dev
+$ sudo apt install libfftw3-mpi-dev
+$ sudo apt install python3.10-dev
+  (depending on the version of Ubuntu: 
+   $ sudo apt install python3.12-dev)
+$ sudo apt install libopenblas-dev
+
+It would be nice if some libraries, like numpy, scipy, matplotlib, etc are compiled within the python distribution
+
+--------------------------------------------
+ To install SIESTA in your user account:
+--------------------------------------------
+
+After login, go to the directory where you want to download the package.
+For instance:
+
+$ mkdir Codes
+$ cd Codes
+
+Then clone the master SIESTA repository 
+
+$ git clone --recurse-submodules https://gitlab.com/siesta-project/siesta.git
+$ cd siesta
+$ git remote add upstream https://gitlab.com/siesta-project/siesta.git
+$ git fetch --all
+$ git checkout --track origin/master
+
+Create the directory where SIESTA will be installed.
+For instance
+
+# Create a build directory
+$ mkdir tmp_build
+$ cd tmp_build
+
+Prepare the compilation
+
+$ cmake \
+-DCMAKE_INSTALL_PREFIX="$HOME/hpc/siesta" \
+-DCMAKE_C_COMPILER="mpicc" \
+-DCMAKE_Fortran_COMPILER="mpifort" \
+-DSIESTA_WITH_NETCDF="ON" \
+-DSIESTA_WITH_FLOOK="False" \
+-DSCALAPACK_LINKER_FLAG="-lscalapack-openmpi" \
+-DSCALAPACK_LIBRARY="/usr/lib/x86_64-linux-gnu/libscalapack-openmpi.so.2.1" \
+-DSIESTA_WITH_WANNIER90="ON" .. 2>&1 | tee ../siesta-configure.log
+
+(Depending on the version of Ubuntu, use the following line instead of the previous one:
+
+-DSCALAPACK_LIBRARY="/usr/lib/x86_64-linux-gnu/libscalapack-openmpi.so.2" \
+)
+
+And finally 
+
+# Build SIESTA
+$ make -j4 2>&1 | tee ../siesta-build.log
+
+# Install SIESTA
+$ make install 2>&1 | tee -a ../siesta-install.log
+
+# Test the compilation
+$ ctest -N -L simple
+$ ctest -L simple
+
+# Clean-up the mess
+$ cd ..
+$ rm -rf _tmp_build
+
+The executable and all the utilities will be available in:
+
+$HOME/hpc/siesta/bin
+
+And the required libraries (and include directories) are available in
+
+$HOME/hpc/siesta/lib
+$HOME/hpc/siesta/include
+
+If this directory $HOME/siesta/bin is included in your $PATH, then just typing 
+
+$ siesta < input.fdf 
+
+would be enough to run it
+
+----------
+----------
+
+Alternative way to compile SIESTA. Use spack
+S spack info siesta
+S spack install siestaXXXX +mpi +elsi 
+S spack spec siestaXXXX +mpi +elsi
+$ spack find -l -v siesta 

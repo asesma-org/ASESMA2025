@@ -1,0 +1,16 @@
+git clone git@gitlab.com:pouillon/siesta.git
+cd siesta
+git submodule update --init
+git remote add upstream git@gitlab.com:pouillon/siesta.git
+git fetch
+git checkout javier
+git branch
+mkdir tmp_build
+cd tmp_build
+module load chpc/cmake/3.21.4/intel_2021u1 
+module load chpc/parallel_studio_xe/2020u1
+module load chpc/earth/netcdf/4.7.4/intel2020u1
+module load  chpc/compmech/libxc/6.2.2-intel
+module load chpc/compmech/fftw/3.3.10_intel2020u1
+cmake -DCMAKE_INSTALL_PREFIX="$HOME/hpc/siesta-hybrids-Intel" -DCMAKE_C_COMPILER="mpiicc" -DCMAKE_Fortran_COMPILER="mpiifort"  -DSIESTA_WITH_MPI="ON" -DSIESTA_WITH_NETCDF="ON" -DSIESTA_WITH_LIBXC="ON" -DSIESTA_WITH_WANNIER90="ON" -DSIESTA_WITH_LIBINT="ON" -DLAPACK_LIBRARY="-lmkl_intel_lp64 -lmkl_sequential -lmkl_core" -DSCALAPACK_LIBRARY="-lmkl_scalapack_lp64 -lmkl_blacs_intelmpi_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core" -DSIESTA_WITH_FLOOK="OFF" -DSIESTA_WITH_FFTW="ON" .. 2>&1 | tee ../siesta-configure-parallel-intel.log
+make -j12 2>&1 | tee ../siesta-build-parallel-intel.log

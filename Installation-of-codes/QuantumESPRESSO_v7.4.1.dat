@@ -11,17 +11,38 @@
 4. Install OpenMPI:
    sudo apt install openmpi-bin libopenmpi-dev
 
-5. Configure QE:
-   ./configure MPIF90=mpif90 F90=gfortran BLAS_LIBS="-lblas" LAPACK_LIBS="-llapack"
+5. Download the Libxc library (v7.0.0) from here: 
+   https://libxc.gitlab.io/download/
+   
+   Uncompress the downloaded file:
+   tar -xvjf libxc-7.0.0.tar.bz2
+ 
+   Install the Libxc library using the instructions in libxc-7.0.0/README:
+   mkdir LIBXC
+   cd libxc-7.0.0
+   autoreconf -i
+   ./configure --prefix=<path-to-LIBXC>
+   (for example, ./configure --prefix=/home/timrov/LIBXC)
+   make
+   make check
+   make install
 
-6. Install various codes of QE:
+6. Configure QE:
+   ./configure MPIF90=mpif90 F90=gfortran \
+     BLAS_LIBS="-lblas" LAPACK_LIBS="-llapack" \
+     --with-libxc --with-libxc-prefix=<path-to-LIBXC>
+
+   Note: Above, please replace PATH/TO/LIBXC with the actual path to LIBXC
+   (e.g. --with-libxc-prefix=/home/timrov/LIBXC)
+
+7. Install various codes of QE:
    make all
 
-7. Add the path to executables to the environment:
+8. Add the path to executables to the environment:
    vi ~/.bashrc
    export PATH=$PATH:<path-to-qe-bin>
-   save a close the file
+   save and close the file
    source ~/.bashrc
 
-8. Test:
+9. Test:
    type pw.x in a terminal
