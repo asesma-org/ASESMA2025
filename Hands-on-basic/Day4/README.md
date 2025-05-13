@@ -1,6 +1,16 @@
-# Exercises
+### Topics of Day-3 hands-on session
 
- - [Exercise 1](exercise1/README.md): Phonons at Gamma in non-polar materials
- - [Exercise 2](exercise2/README.md): Phonons at Gamma in polar materials
- - [Exercise 3](exercise2/README.md): Phonons dispersion in non-polar materials
- - [Exercise 4](exercise2/README.md): Phonons dispersion in polar materials
+- Forces and relaxation
+- Phonons
+
+-----------
+**Exercise 1:** Relaxation: relaxing the atomic position and unit cell `relax` and `vc-relax` modes using 
+    
+    cd example1.relaxation/
+    
+**Exercise 2:** Phonons in polar materials: the basics of `ph.x`
+
+    cd example2.phonons/
+
+------------------------------------------------------------------------
+
