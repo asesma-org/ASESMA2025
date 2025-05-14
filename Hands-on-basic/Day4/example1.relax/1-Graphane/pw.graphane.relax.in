@@ -1,7 +1,7 @@
  &CONTROL
     calculation = 'relax',
     prefix      = 'Graphane',
-    outdir      = '/tmp',
+    outdir      = './tmp',
     pseudo_dir  = '../../pseudo',        
  /
 

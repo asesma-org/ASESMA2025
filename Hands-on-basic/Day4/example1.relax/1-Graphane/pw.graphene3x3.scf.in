@@ -1,7 +1,7 @@
  &CONTROL
     calculation = 'scf',
     prefix      = 'Graphene3x3_PBE',
-    outdir      = '/tmp',
+    outdir      = './tmp',
     pseudo_dir  = '../../pseudo',      
  /
 
