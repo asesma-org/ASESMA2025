@@ -1,0 +1,95 @@
+FROM ubuntu:latest
+## set some necessary env variables (e.g. let mpirun run as root)
+## get rid of some errors: https://github.com/open-mpi/ompi/issues/4948
+ENV DEBIAN_FRONTEND=noninteractive
+ENV OMPI_ALLOW_RUN_AS_ROOT=1
+ENV OMPI_ALLOW_RUN_AS_ROOT_CONFIRM=1
+ENV OMPI_MCA_btl_vader_single_copy_mechanism=none
+
+RUN apt update && apt install -y --no-install-recommends \
+    apt-transport-https \
+    build-essential \
+    ca-certificates \
+    cmake \
+    curl \
+    g++ \
+    gfortran \
+    git \
+    gnupg \
+    openssl \
+    less \
+    libmkl-full-dev \
+    libfftw3-dev \
+    hdf5-tools \
+    libhdf5-dev \
+    libnfft3-dev \
+    libopenmpi-dev \
+    openmpi-bin \
+    ssh \
+    vim \
+    wget \
+    && \
+    apt autoremove --purge -y && \
+    apt autoclean -y && \
+    rm -rf /var/cache/apt/* /var/lib/apt/lists/*
+
+
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip 
+
+RUN mkdir /python_source
+RUN mkdir /python_source/site-packages
+
+#install dftpy
+RUN pip install --target /python_source/site-packages matplotlib numpy pandas dftpy
+
+ENV PYTHONPATH=/python_source/site-packages
+
+
+
+### create source dir
+RUN mkdir /source
+#
+
+RUN apt-get update &&  DEBIAN_FRONTEND=noninteractive apt-get install -y curl sudo wget git less rsync nano openssl ca-certificates
+
+RUN cd /source && apt install -y --no-install-recommends  autogen autoconf libtool
+
+## install libxc
+RUN git clone https://gitlab.com/libxc/libxc.git && cd libxc && autoreconf -i\
+&& ./configure --prefix=/source/libxc/installation \
+&& make -j4 \
+&& make check \
+&& make install
+
+
+## install QE 7.4
+## ldconfig: https://stackoverflow.com/questions/14769599/mpi-error-loading-shared-libraries
+## sed make.inc: https://gitlab.com/QEF/q-e/-/issues/214
+RUN cd /source \
+    &&  wget --quiet https://gitlab.com/QEF/q-e/-/archive/qe-7.4/q-e-qe-7.4.tar.gz \
+    && tar xzf q-e-qe-7.4.tar.gz
+RUN cd /source/q-e-qe-7.4 \
+    && ldconfig \
+    &&  ./configure --with-libxc --with-libxc-prefix=/source/libxc/installation \
+    && sed -i 's/\-I\/opt\/intel\/mkl\/include/\-I\/usr\/include\/mkl\//' make.inc \
+    && make -j4 all w90 epw \
+    && make install
+
+
+## create work dir
+RUN mkdir /work 
+
+# create entrypoint
+# expose port for jupyter
+
+
+EXPOSE 8378
+
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+
+RUN ["chmod", "+x", "/usr/local/bin/entrypoint.sh"]
+
+# change user and group id to match host machine if options are passed accordingly
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
