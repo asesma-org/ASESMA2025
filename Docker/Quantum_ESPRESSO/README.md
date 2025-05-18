@@ -36,7 +36,10 @@ ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 ```
 
 
-You can then use the command:  `alias asesma_qe="docker run -p 8888:8888 --rm -it --shm-size=4g -e USER_ID=`id -u` -e GROUP_ID=`id -g` -v /home:/home asesma_qe:final bash"`
+You can then use the command:
+```
+alias asesma_qe="docker run -p 8888:8888 --rm -it --shm-size=4g -e USER_ID=`id -u` -e GROUP_ID=`id -g` -v /home:/home asesma_qe:final bash"
+```
 
 This will be in the `.bashrc` of the workstation and will allow to use the command `asesma_qe` to enter an interactive docker container for which the `/home` folder is mounted to the same `/home` folder of the workstation
 
