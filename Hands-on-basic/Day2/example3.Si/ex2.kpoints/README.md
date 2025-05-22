@@ -12,11 +12,15 @@
 
 4. Rerun `scan_kgrid.sh` for the second time
 
-5. Run `gather_data_even.sh` and `gather_data_odd.sh`
+5. Run `gather_data.sh` 
 
-6. Plot the data with python:
+6. Comment out the even line of the awk command in `gather_data.sh` and remove the comment from the odd line
+
+7. Rerun `gather_data.sh` again
+
+8. Plot the data with python:
     
-    `python3 plot_etot_kgrid.py`
+    `python plot_etot_kgrid.py`
      
 
 
