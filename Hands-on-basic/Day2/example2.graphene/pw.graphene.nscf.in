@@ -13,10 +13,6 @@
     ntyp = 1,
     ecutwfc = 40.0,
     ecutrho = 400.0,
-
-    !occupations = 'smearing',
-    !smearing = 'gaussian',
-    !degauss = 0.01,
     occupations='tetrahedra_opt'
  /
  

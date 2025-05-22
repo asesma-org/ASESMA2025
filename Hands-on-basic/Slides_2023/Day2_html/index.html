@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+
+		<style>
+			:root {
+ 		 --pres-color:#dc0101;
+		 --title-color:#AA4A44;
+ 		 --accent-color: #006;
+		}
+
+		.container{
+			display: flex;
+		}
+		.container_cent{
+			display: flex;
+			align-items: center
+		}
+		.col{
+			flex: 1;
+			padding-left: 50px;
+			padding-right: 50px;
+		}
+		.col-r{
+			flex: 1;
+			border-right: 3px solid black;
+			padding-left: 10px;
+			padding-right: 50px;
+		}
+		.footer {
+			position: absolute;
+			text-align: left;
+			bottom: -3em;
+			left: 1em;
+			font-size: 0.6em;
+			font-style: italic;
+		}
+		.caption {
+			font-size: 0.6em;
+			font-style: italic;
+		}
+		.dividerslide{
+			color:white;
+		}
+		
+		.titleheader{
+			background-color:#fff;
+			width:1800px;
+			margin: auto;
+			margin-bottom: 20px;
+			border-bottom:5px solid var(--pres-color);
+			border-radius: 0px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		</style>
+
+
+		<meta charset="utf-8">
+
+		<title>ASESMA 2023</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- <meta name="viewport" content="scale=1.0"> -->
+
+		<!-- add your css styling -->
+		<link rel="stylesheet" href="dist/boxes.css">
+		
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<script src="./plotly.js"></script>
+    	<script src="./echarts/dist/echarts.js"></script>
+		<script src="plugin/math/math.js"></script>
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+		
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides" style="text-align: left;">
+				
+				<section class="center">
+					
+					<div class="plot" id="box" style="background-color:var(--title-color); width:1500px; margin: 0 auto;
+					 height:500px; padding-top: 50px; padding-bottom: 50px; padding-left: 50px; padding-right: 50px;border-radius: 15px;
+					 text-align: center;">
+					<span style="margin: 10 auto; 
+					color: #fff;  font-size: 140px; text-align: center;">
+					<p style="text-align: center;"> ASESMA 2023: Hands-on session -- Day-2 </p>
+					<span style="margin: 0 auto ; 
+					color: #fff;  font-size: 60px; text-align: center;">
+					<p style="text-align: center;"> Alberto Carta, Iurii Timrov, and others</p>
+					</span>
+					<center>
+
+					</div>
+					<br>
+					<p style="text-align: center;">June 2023</p>
+
+					
+				</section>
+
+				<section style="text-align: left;">
+					<h1>Topics of the session:</h1>
+					<h2>1. The basics: benzene and graphene</h2>
+					<ul>
+					  <li> Single molecule calculations: benzene</li>
+					  <li> Basics of post-processing: plotting wavefunctions</li>
+					  <li> Periodic systems: graphene</li>
+					</ul>
+					<h2>2. DFT bread and butter: convergence tests and lattice optimization </h2>
+					<ul>
+					  <li> Basic convergence tests on fcc Si: energy cutoff and k-grid </li>
+					  <li> Optimizing the lattice constant: </li>
+					  <li> Extracting physical information: bulk modulus </li>
+					</ul>
+					<br>
+					<p>To get the latest version of the exercises, in the ASESMA 2023 folder execute:  `git pull` </p>
+					<br>
+				  </section>
+				  
+				  <section>
+					<h1>About Quantum ESPRESSO</h1>
+					<br />
+					<p>More info about Quantum ESPRESSO can be found in:</p>
+					<ul>
+					  <li><a href="https://www.quantum-espresso.org/">https://www.quantum-espresso.org/</a></li>
+					  <li>Quantum ESPRESSO (QE) documentation:
+						<ul>
+						  <li>on-line manuals <a href="https://www.quantum-espresso.org/Doc/INPUT_PW.html">(pw.x code)</a> and <a href="https://www.quantum-espresso.org/Doc/INPUT_PP.html">(pp.x code)</a> for input file description</li>
+						</ul>
+					  </li>
+					  <li>Useful resources:
+						<ul>
+						  <li> <a href="https://www.materialscloud.org/work/tools/qeinputgenerator">Input generator</a> from materials cloud </li>
+						  <li>Pseudopotentials <a href="https://www.materialscloud.org/discover/sssp/table/efficiency">SSSP library</a> and  <a href="https://www.materialscloud.org/discover/sssp/table/efficiency">GBRV library</a> </li>
+						</ul>
+					  </li>
+					</ul>
+				  </section>
+				  <section style="text-align: center";>
+					<h1>Exercise 1: Benzene</h1>
+					<h2> How to calculate and plot molecular orbitals of benzene <br> (actually \(sign(\psi(r))\cdot|\psi(r)|^2\) )</h2> 
+				  </section>
+				  
+				  <section>
+					<!-- wrap in 2 columns -->
+					<div class="container">
+						<div class="col-r">
+
+						<h2>Step 0:</h2>
+						<h3>View the Benzene Molecule</h3>
+						<pre><code>xcrysden --pwi pw.benzene.scf.in</code></pre>
+						<p>
+						Move the mouse around to take a look at the molecule.
+						</p>
+						<p>
+						The ".pwi" format stands for quantum espresso pw.x input file.
+						For a pw.x output file, that would be ".pwo".
+						</p>
+						<span class="fragment" >
+						<h2>Step 1:</h2>
+						<h3>Perform the SCF Calculation</h3>
+						<pre><code>pw.x -in pw.benzene.scf.in \<br>&gt; pw.benzene.scf.out</code></pre>
+						<p>
+						The pw.x code will now perform a DFT self-consistent field (SCF) calculation.
+						</p>
+						</span>
+						</div>
+						<div class="col">
+							<img src="./images/ex1/pw.benzene.scf.png" title="benz_montage" width="800px"  style="border:0px solid black;" >
+
+				  </section>
+				  
+				  <section>
+					<h2>Step 2:</h2>
+					<h3>Postprocess the wavefunction data </h3>
+					<pre><code>pp.x -in pp.benzene.psi2.in &gt; pp.benzene.psi2.out</code></pre>
+					<p>
+					  The resulting wavefunction amplitudes \(sign(\psi(r))\cdot|\psi(r)|^2\) are written to files <em>psi2.benzene_K001_B0*.xsf</em>
+					</p>
+					<span class="fragment" >
+					<h2>Step 3:</h2>
+					<h3>Plot a single molecular orbital</h3>
+					<pre><code>xcrysden --xsf psi2.benzene_K001_B006.xsf</code></pre>
+					<p>
+					  Make a fancy display of the molecular orbital (follow the instructions of the tutor). 
+					  The README.md contains the info necessary to save the current state view. You can try and save that as <em>MO-state.xcrysden</em>
+					  and then use the same view with another orbital:
+					</p>
+					<pre><code>xcrysden --xsf psi2.benzene_K001_B005.xsf --script MO-state.xcrysden</code></pre>
+					</span>
+				  </section>
+				  
+				  <section>
+					<div class="container">
+						<div class="col-r">
+
+						<h2>Step 4:</h2>
+						<h3>Plot All Molecular Orbitals</h3>
+						<p>
+						Run in the terminal:
+						<pre><code> bash plot-psi2.sh </code></pre>
+						The shell script is trying to plot all wavefunctions you computed, be patient (this will take a while).
+						</p>
+						</div>
+						<div class="col">
+						<span class="fragment">
+						<!-- add an image of the orbitals -->
+						<img src="./images/ex1/montage.png" title="benz_montage" width="800px"  style="border:0px solid black;" ></iframe>
+						</span>
+						</div>
+					</div>
+
+
+				  </section>
+
+
+				  <section style="text-align: center;">
+					<h1>Exercise 2: Graphene</h1>
+					<h2> Introduction to periodic systems </h2>
+				  </section>
+				  
+				    <section>
+							<h2> Graphene is a single sheet of carbon atoms </h2>
+							<div class="container">
+							<div class="col ">
+							<p style="text-align: center;"> Periodic boundary conditions are applied in the plane </p>
+							<img src="./images/ex2/graphene_top.png" title="graphene" width="800px"  style="border:0px solid black;" ></iframe>
+							</div>
+							<div class="col">
+							<span class="fragment">
+								<p style="text-align: center;"> But in quantum espresso every direction is periodic </p>
+							<img src="./images/ex2/graphene_persp.png" title="graphene" width="800px"  style="border:0px solid black;" ></iframe>
+							</span>
+							</div>
+							</div>
+
+					</section>
+
+					<section>
+					<h2> Computing the electronic structure of graphene </h2>
+					<div class="container">
+						<div class="col-r">
+							<p> We can describe the graphene sheet with just 2 atoms in the unit cell </p>
+							<img src="./images/ex2/graphene_unit.png" title="graphene" width="300px"  style="border:0px solid black;" ></iframe>
+						</div>
+						<div class="col">
+							<br>
+							<h3>Step 1:Perform the SCF Calculation</h3>
+							<pre><code>pw.x -in pw.graphene.scf.in \<br>&gt; pw.graphene.scf.out</code></pre>
+							<h3>Step 2: Make a DOS Plot</h3>
+							<pre><code>pw.x -in pw.graphene.nscf.in \<br>&gt; pw.graphene.nscf.out</code></pre>
+							<h3>Step 3: Calculate DOS Datafile</h3>
+							<pre><code>dos.x -in dos.graphene.in \<br>&gt; dos.graphene.out</code></pre>
+							<p>The resulting DOS datafile is written to <em>graphene.dos </em></p>
+							<h3>Step 4: Plot the DOS with Gnuplot</h3>
+							<pre><code>gnuplot dos.gp</code></pre>
+
+
+				  </section>
+				  
+				  <section>
+					
+					<h3> Step 5: Perform Bands Calculation</h3>
+					<pre><code>pw.x -in pw.graphene.bands.in &gt; pw.graphene.bands.out</code></pre>
+				  
+					<h3>Step 6: Generate Datafile for Plotting</h3>
+					<pre><code>bands.x -in bands.graphene.in &gt; bands.graphene.out</code></pre>
+					<p>The resulting datafile for plotting is written to <em> graphene.bands.dat.gnu</em> </p>
+					
+					<h3>Step 7: Plot the bandstructure with Gnuplot</h3>
+					<pre><code>gnuplot spaghetti.gp</code></pre>
+				  
+					<h3>Step 8: Find and Edit Fermi Energy in Gnuplot Files</h3>
+					<pre><code>grep Fermi pw.graphene.nscf.out</code></pre>
+					<p>Use the Fermi energy value from the output and edit <em>dos.gp</em> and <em>spaghetti.gp</em> files accordingly.</p>
+					<h3>Step 9: Replot the DOS and bandstructure</h3>
+					<pre><code>gnuplot dos.gp</code></pre>
+					<pre><code>gnuplot spaghetti.gp</code></pre>
+				  </section>
+				  
+				  <section style="text-align: center;">
+					<h1>Exercise 3: Silicon</h1>
+					<h2> Bread and butter of real DFT calculations </h2>
+				  </section>
+
+
+				  <section>
+					<h1>Crystal Structure Definition</h1>
+					<div class="container">
+						<div class="col-r">
+
+							<p> bulk silicon is a face-centered cubic (FCC) lattice with 2 atoms in the unit cell at positions [0 0 0] and [1/4 1/4 1/4] (this is also called <em>diamond</em> or <em>zinc-blend</em> structure) </p>
+
+							<img src="./images/ex3/fcc_si.png" title="silicon" width="700px"  style="border:0px solid black;" ></iframe>
+						</div>
+						<div class="col">
+							  <pre class="stretch" style="line-height: 1.5em;"><code contenteditable>
+&CONTROL
+calculation='scf',
+prefix='silicon',
+pseudo_dir='../../pseudo/',
+outdir='./tmp'
+/
+&SYSTEM    
+ibrav =  2, 
+celldm(1) = 10.2, 
+nat =  2, 
+ntyp = 1,
+ecutwfc = 28, 
+/
+&ELECTRONS
+/
+ATOMIC_SPECIES
+Si  28.086  Si.pz-vbc.UPF
+ATOMIC_POSITIONS
+Si 0.00 0.00 0.00 
+Si 0.25 0.25 0.25 
+K_POINTS automatic
+4 4 4   1 1 1
+								</code></pre>
+							</div>
+					</div>
+
+				  </section>
+				  <section>
+					<h1>Crystal Structure Definition</h1>
+						
+					<div class="container">
+						<div class="col-r">
+
+							<ul>
+							<li>`ibrav=2`: meaning fcc lattice</li>
+							<li>Just one: `celldm(1)=10.2`, lattice parameter <em>a</em> in Bohr</li>
+							<li>`nat=2`: two atoms</li>
+							<li>`ntyp=1`: one distinct atomic specie</li>
+							<li> Where are the atoms located in the unit cell? See card ATOMIC POSITIONS: here, in Cartesian axes, in units of <em>a</em></li>
+							</ul>
+						</div>
+						<div class="col">
+							  <pre class="stretch" style="line-height: 1.5em;"><code contenteditable>
+&CONTROL
+calculation='scf',
+prefix='silicon',
+pseudo_dir='../../pseudo/',
+outdir='./tmp'
+/
+&SYSTEM    
+ibrav =  2, 
+celldm(1) = 10.2, 
+nat =  2, 
+ntyp = 1,
+ecutwfc = 28, 
+/
+&ELECTRONS
+/
+ATOMIC_SPECIES
+Si  28.086  Si.pz-vbc.UPF
+ATOMIC_POSITIONS
+Si 0.00 0.00 0.00 
+Si 0.25 0.25 0.25 
+K_POINTS automatic
+4 4 4   1 1 1
+								</code></pre>
+							</div>
+
+							</div>
+				  </section>
+				  
+
+
+				  <section>
+					<h2>Logic of the examples:</h2>
+					<p>
+					  Convergence tests for Si bulk consist of the following steps:
+					</p>
+					<ol>
+					  <li>Converge the basis-set</li>
+					  <li>Converge the k-points</li>
+					  <li>With converged basis-set and k-points, calculate the lattice parameter of FCC bulk Si</li>
+					  <li>With converged basis-set, k-points, and lattice parameter, fit the bulk modulus of FCC Si</li>
+					</ol>
+				  
+					<h2>Description of folder structure:</h2>
+					<ul>
+					  <li>
+						<em>ex1.ecutwfc/</em> - Convergence tests for cutoff energy 
+					  </li>
+					  <li>
+						<em>ex2.kpoints/</em> - Convergence tests for k-points 
+					  </li>
+					  <li>
+						<em>ex3.alat/</em> - Search of lattice parameter of Si bulk (<em>alat</em> = <em>a</em> lattice parameter)
+					  </li>
+					</ul>
+				  </section>
+
+				  <section>
+					<h2>Kinetic Energy Cutoff (ecutwfc)</h2>
+					<p>
+					  The kinetic energy cutoff ecutwfc (in Ry) determines the size of the Plane-Wave
+					  (PW) basis set used to expand wave-functions (i.e. Kohn-Sham orbitals).
+					  The default value for the charge density is ecutrho=4*ecutwfc, which is suitable for norm-conserving pseudopotentials.
+					</p>
+					<p>
+					  A manual test of convergence with respect to the kinetic energy cutoff involves the following tasks (Note: We will not perform this manually!):
+					</p>
+					<ol>
+					  <li>
+						Change the value of ecutwfc in the pw.si.scf.in input file to different values such as 16, 20, 24, 28, 32 Ry.
+					  </li>
+					  <li>
+						For each value of ecutwfc, run pw.x and record the final total energy.
+					  </li>
+					  <li>
+						Store the data in a file, let's say <em> si.etot_vs_ecut </em> (each line should contain two values: ecutwfc and total energy).
+					  </li>
+					  <li>
+						Plot the energies collected in si.etot vs ecut using your preferred plotting program.<br>
+						Gnuplot:
+						<pre><code> plot "si.etot_vs_ecut" w lp </code></pre>
+						Python:
+						<pre><code> python3 plot_etot_ecut.py</code></pre>
+					  </li>
+					</ol>
+				  </section>
+
+
+				  <section>
+					<h2>Kinetic Energy Cutoff (ecutwfc)</h2>
+					<p>
+					  In the end, we want to have something of the type: 
+					</p>
+					<div class="container">
+						<div class="col-r">
+
+					<pre style="line-height: 1.5em; width: 500px;"><code>
+12.0000 -15.80731200
+16.0000 -15.83916740
+20.0000 -15.84754590
+24.0000 -15.85081789
+28.0000 -15.85188267
+32.0000 -15.85244512
+36.0000 -15.85280759
+								</code></pre>
+							<p>
+							We are looking for differences of &lt; mRy 
+							</p>
+							<h3> Note: </h3>
+							<p>
+							The energy per-se is meaningless, only energy differences are meaningful!
+							</p>
+						</div>
+						<div class="col">
+							<img src="./images/ex3/en_vs_ecut.png" title="ecutwfc" width="800px"  style="border:0px solid black;" ></iframe>
+						</div>
+						</div>
+
+
+
+				  </section>
+				
+				  <section>
+					<h2>Convergence with Respect to K-Points</h2>
+					<p>
+						A sufficiently dense grid of k-points is required to accurately represent the periodicity of the system.
+						To test the convergence with respect to k-points, you can modify the K_POINTS card in your input file.
+						Request automatic Monkhorst-Pack grids using the following format:
+					</p>
+					<pre style="line-height: 1.5em;"><code>
+					K_POINTS automatic
+					nk1 nk2 nk3 k1 k2 k3
+					</code></pre>
+					<p>
+						Gradually increase the values of nk1, nk2, and nk3 while keeping k1, k2, and k3 equal to 1.
+						For example, you can try increasing nk1 = nk2 = nk3 to 2, 4, 6, 8, and so on.
+						Run the pw.x calculation for each set of k-point values.
+					</p>
+					<span class="fragment">
+						
+					<h3>Note:</h3>
+					<ul>
+					  <li>The first three nk1 nk2 nk3 numbers indicate the number of grid points along crystal axes 1, 2, 3.</li>
+					  <li>The second three k1 k2 k3 numbers, either 0 or 1, indicate whether the grid starts from 0 or is displaced by half a step along crystal axes 1, 2, 3.</li>
+					  <li>Convergence is not necessarily monotonic, as there is no variational principle with respect to the number of k-points. Why do you think this is the case? Try to repeat the example with odd values of nk.</li>
+					</ul>
+					</span>
+				  
+
+				</section>
+
+				<section>
+					<h2>Lattice Parameter Determination</h2>
+					<p>
+					  In silicon (Si), the equilibrium state is determined solely by the minimum-energy lattice parameter.
+					  Due to symmetry, there are no forces on the atoms.
+					  You can verify this by setting tprnfor=.true. in the namelist &CONTROL and checking for the forces reprinted at the end of the calculation.
+					</p>
+					<div class="container">
+						<div class="col-r">
+						<span class="fragment">
+
+							<p>
+								To determine the lattice parameter of bulk Si, you can follow these steps:
+							</p>
+							<ul>
+							  <li>Choose suitable values for ecutwfc (e.g., 36 Ry) and the k-point grid (e.g., 6 6 6 1 1 1).</li>
+							  <li>Run pw.x for values of celldm(1) ranging from 9.7 to 10.8 Bohr in steps of 0.1 Bohr </li>
+							</ul>
+						</span>
+						</div>
+
+						<div class="col">
+						<span class="fragment">
+							<br>
+							<br>
+						
+							<img src="./images/ex3/alat_scan.png" title="alat" width="800px"  style="border:0px solid black;" ></iframe>
+
+						</span>
+						</div>
+					</div>
+
+				</section>
+
+				<section>
+					<h2>Extracting physical parameters: the Bulk modulus</h2>
+					<div class="container">
+						<div class="col-r">
+							<p>
+								The bulk modulus is defined as:
+							</p>
+							\[ B = -V \left( \frac{{dP}}{{dV}} \right) \]
+
+							<p>
+								The Murnaghan equation of state assumes that the bulk modulus (B) is proportional to the pressure (P).	
+							</p>
+
+							\[   B = B_0 + \frac{{B_0'}}{{B_0}} \cdot P \]
+							
+
+							<!-- \[ \begin{aligned}
+							 E(V) = E_0 + B_0\,V_0\left[\frac{1}{B_0'(B_0'-1)}\left(\frac{V}{V_0}\right)^{1-B_0'} + \\
+							 \frac{1}{B_0'}\frac{V}{V_0} - \frac{1}{B_0'-1}\right].
+							 \end{aligned} \] -->
+								\[\begin{aligned}
+								E(V) &amp; = E_0 + \bigg[ \frac{1}{B_0'(B_0'-1) } \bigg( \frac{V}{V_0} \bigg)^{1-B_0'}  + \\
+								&amp; + \frac{1}{B_0'}\frac{V}{V_0} - \frac{1}{B_0'-1}\bigg] \\
+								\end{aligned} \]
+						</div>
+
+						<div class="col">
+						<span class="fragment">
+							<br>
+							<br>
+							<img src="./images/ex3/fit.png" title="alat" width="900px"  style="border:0px solid black;" ></iframe>
+
+						</span>
+						</div>
+					</div>
+
+				</section>
+				
+				<section data-background-color=var(--title-color) class="center">
+					<div class="dividerslide">
+					<h4 style="color:#fff">Thank you ! Questions?</h4>
+					</div>
+				</section>
+				
+				
+				
+
+
+
+
+
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+			// The "normal" size of the presentation, aspect ratio will be preserved
+			// when the presentation is scaled to fit different resolutions. Can be
+			// specified using percentage units.
+				width: 1920,
+				height: 1080,
+
+				// Factor of the display size that should remain empty around the content
+				margin: 0.1,
+
+				// Bounds for smallest/largest possible scale to apply to content
+				minScale: 0.2,
+				maxScale: 1.0,	
+				
+				// To print the pdf add: ?print-pdf to the url
+				// Avoid printing animations as different slides whene exporting the pdf
+				pdfSeparateFragments: true,
+				
+				slideNumber: true,
+				controls: true,
+				progress: true,
+				center: false,
+				hash: true,
+				viewDistance: 4,
+			  	math: {
+				mathjax: './mathjax/es5/tex-chtml.js', //local path to mathjax installation
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } },
+				tex2jax: {
+                                inlineMath: [ ['$','$'], ["\\(","\\)"] ]	
+						 }
+			
+			
+					},
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealMath ], //removed highlighting
+				// plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath ],
+				dependencies: [
+				{ src: 'plugin/mouse-pointer/mouse-pointer.js', async: true }, 
+					] 
+			
+			
+			});
+
+		</script>
+	<style type="text/css">
+		/* 1. Style header/footer <div> so they are positioned as desired. */
+		#header-left {
+			position: absolute;
+			top: 0%;
+			left: 0%;
+		}
+		#header-right {
+			position: absolute;
+			top: 0%;
+			right: 0%;
+		}
+		#footer-left {
+			position: absolute;
+			bottom: 0%;
+			left: 5%;
+		}
+		
+		#footer-center {
+			position: absolute;
+			bottom: 3%;
+			width: 100%;
+			/* left: 50%; */
+			text-align: center;
+			font-size: 0.7em;
+		}
+		#footer-right {
+			position: absolute;
+			bottom: 5%;
+			right: 5%;
+		}
+	</style>
+	
+	<div id="hidden" style="display:none;">
+		<div id="header">
+			<img style="position: absolute; bottom: 0em; left: 3em; height:1.0em; " src="./images/logo.png" >
+			<div id="footer-center" style=" font-weight: bold; font-color:#000">Alberto Carta & Claude Ederer: ETH Zurich</div>
+		</div>
+	</div>
+	
+	<script src="js/additional/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript">
+		// 3. On Reveal.js ready event, copy header/footer <div> into each `.slide-background` <div>
+		var header = $('#header').html();
+		if ( window.location.search.match( /print-pdf/gi ) ) {
+			Reveal.addEventListener( 'ready', function( event ) {
+				$('.slide-background').append(header);
+			});
+		}
+		else {
+			$('div.reveal').append(header);
+	   }
+	</script>
+
+	</body>
+</html>
