@@ -20,7 +20,7 @@
 
     cd example4.phonon.Gamma.AlAs/
 
-**Exercise 4:** Phonons in polar materials: `ph.x` calculation of phonon dispersion with LO-TO splitting
+**Exercise 5 (Optional):** Phonons in polar materials: `ph.x` calculation of phonon dispersion with LO-TO splitting
 
     cd example5.phonon.dispersion.AlAs/
 

@@ -1,5 +1,5 @@
 # PURPOSE OF THE EXERCISE:
-## How to calculate and plot density-of-states (DOS) and band structure (spaghetti) of a graphene sheet.
+## How to calculate and plot density-of-states (DOS) of a graphene sheet.
 --------------------------------------------------------------------
 
 **Steps to perform:**

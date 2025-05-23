@@ -1,9 +1,9 @@
 
 #!/bin/sh
 
-#rm -f c.etot_vs_vacuum
+rm -f c.etot_vs_vacuum
 # loop over ecutwfc value
-for cell_parameter in 8 10 12 14 18 20 
+for cell_parameter in  X X X  ! Specify the range of cell_parameter
 
 do
     echo "Grepping energy and stresses for vacuum = $cell_parameter bohr..."

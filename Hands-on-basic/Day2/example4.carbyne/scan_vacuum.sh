@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # loop over ecutwfc value
-for cell_parameter in 20
-#8 10 12 14 18 20 
+for cell_parameter in 8 10 12 14 18 20 
+
 do
     echo "Running for vacuum level = $cell_parameter ..."
 

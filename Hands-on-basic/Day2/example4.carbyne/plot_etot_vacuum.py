@@ -3,6 +3,9 @@ import numpy as np
 
 # Load data from file
 data = np.loadtxt('c.etot_vs_vacuum')
+cell_parameter = data[:, 0] # Size of the cell: vacuum space along x-y (bohr)
+Etot = data[:, 1]  # Total energy (Ry)
+Ptot = data[:, 2]  #Total pressure (kbar)
 
 #  Create figure and subplots
 fig, axs = plt.subplots(2, 1, figsize=(8, 6), sharex=True)
@@ -20,10 +23,10 @@ axs[1].set_ylabel('Total stress (kbar)', size =16)
 axs[1].set_xlabel('vacuum along the lateral directions (Bohr)', size =16)
 
 # Plot total energy
-axs[0].plot(data[:, 0], data[:, 1], color = "green", linestyle='-', linewidth=2, marker='o', markersize=10)
+axs[0].plot(cell_parameter, Etot, color = "green", linestyle='-', linewidth=2, marker='o', markersize=10)
 
 # Plot forward difference
-axs[1].plot(data[:, 0], data[:, 2], color = "red", linestyle='-', linewidth=2, marker='o', markersize=10)
+axs[1].plot(cell_parameter, Ptot, color = "red", linestyle='-', linewidth=2, marker='o', markersize=10)
 
 # Show the plot
 plt.tight_layout()
