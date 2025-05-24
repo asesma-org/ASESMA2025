@@ -18,7 +18,7 @@ for degauss in $dg_list; do
 &control
     calculation = 'scf',
     prefix = 'al',
-    pseudo_dir = '../../../pseudo',
+    pseudo_dir = '../../../../pseudo',
     outdir = './tmp'
 /
 &system

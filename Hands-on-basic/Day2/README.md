@@ -14,8 +14,7 @@
     cd example1.benzene/
     
 **Exercise 2:** Graphene sheet: basic `pw.x` SCF calculation + 
-                density-of-states (DOS) and band structure (spaghetti)
-                plots using `dos.x` and `bands.x` codes
+                density-of-states (DOS) plots using `dos.x` and `bands.x` codes
 
     cd example2.graphene/
     
@@ -23,6 +22,10 @@
                 extracting structural information (Bulk modulus fitting)
 
     cd example3.Si/
+
+**Exercise 4 (Optional):** Carbyne chain: `pw.x` convergence tests of vacuum
+
+    cd example4.carbyne/
     
 ------------------------------------------------------------------------
 

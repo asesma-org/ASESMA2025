@@ -1,0 +1,6 @@
+  ! Specify the name of the file with the interpolated frequencies produced by matdyn.x
+0 600
+freq.plot
+freq.ps
+0.0
+100.0 0.0

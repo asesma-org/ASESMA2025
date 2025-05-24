@@ -6,8 +6,9 @@
 rm -f si.etot_vs_ecut
 
 # loop over ecutwfc value
-for kres in 2 4 6 8    # even values
-#for kres in 3 5 7 9   # odd values
+# comment and uncomment one of the two line accordingly
+#for kres in 2 4 6 8    # even values
+for kres in 3 5 7 9   # odd values
 do
     echo "Running for kgrid = $kres $kres $kres  ..."
 

@@ -78,8 +78,7 @@ V_fit = np.linspace(np.min(V), np.max(V), 100)
 E_fit_murnaghan = murnaghan(V_fit,  E0_fit_murnaghan,V0_fit_murnaghan, B0_fit_murnaghan, Bp_fit_murnaghan)
 # convert ry to joules
 
-
-
+print("Equilibrium volume from murnaghan equation:  ",V0_fit_murnaghan, "Bohr^3" )
 # Calculate the fitted energy using the quadratic fit
 E_fit_quadratic = quadratic(V_fit, a_fit_quadratic, b_fit_quadratic, c_fit_quadratic)
 print(f"Bulk modulus Murnaghan fit: {B0_fit_murnaghan*RytoJ/(BohrtoM**3)/(10**9) :.2f} GPa")

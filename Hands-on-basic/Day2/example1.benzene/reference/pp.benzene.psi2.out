@@ -1,5 +1,5 @@
 
-     Program POST-PROC v.7.0 starts on 29May2023 at 16:47:10 
+     Program POST-PROC v.7.2 starts on 22May2025 at 10:33: 2 
 
      This program is part of the open-source Quantum ESPRESSO suite
      for quantum simulation of materials; please cite
@@ -10,10 +10,12 @@
      in publications or presentations arising from this work. More details at
      http://www.quantum-espresso.org/quote
 
-     Parallel version (MPI), running on     1 processors
+     Parallel version (MPI & OpenMP), running on       1 processor cores
+     Number of MPI processes:                 1
+     Threads/MPI process:                     1
 
      MPI processes distributed on     1 nodes
-     10817 MiB available memory on the printing compute node when the environment starts
+     49346 MiB available memory on the printing compute node when the environment starts
 
 
      Reading xml data from directory:
@@ -183,10 +185,10 @@
      Writing data to be plotted to file psi2.benzene_K001_B016.xsf
      Plot Type: 3D                     Output format: XCrySDen     
 
-     POST-PROC    :     17.62s CPU     18.78s WALL
+     POST-PROC    :      8.33s CPU      8.96s WALL
 
 
-   This run was terminated on:  16:47:29  29May2023            
+   This run was terminated on:  10:33:10  22May2025            
 
 =------------------------------------------------------------------------------=
    JOB DONE.

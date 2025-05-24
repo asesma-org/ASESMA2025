@@ -78,6 +78,25 @@ RUN cd /source/q-e-qe-7.4 \
     && make install
 
 
+## install SIESTA
+RUN apt update && apt install -y --no-install-recommends gfortran cmake libopenmpi-dev liblapack-dev libscalapack-openmpi-dev libnetcdff-dev lua5.4 liblua5.4-dev
+#    apt autoremove --purge -y && \
+#    apt autoclean -y && \
+#    rm -rf /var/cache/apt/* /var/lib/apt/lists/*
+
+RUN cd /source \
+  && git clone --recurse-submodules https://gitlab.com/siesta-project/siesta.git \
+  && cd siesta \
+  && git remote add upstream https://gitlab.com/siesta-project/siesta.git \
+  && git fetch --all \
+  && git checkout --track origin/master \
+  && cmake -S. -B_build -DCMAKE_INSTALL_PREFIX=/source/siesta/installation -DCMAKE_Fortran_COMPILER="mpifort" -DSIESTA_WITH_NETCDF="ON" -DSIESTA_WITH_FLOOK="False" -DSIESTA_WITH_WANNIER90="ON" -DSCALAPACK_LINKER_FLAG="-lscalapack-openmpi" -DSCALAPACK_LIBRARY="/usr/lib/x86_64-linux-gnu/libscalapack-openmpi.so" \
+  && cmake --build _build -j 4 \
+  && cmake --install _build 
+
+
+
+
 ## create work dir
 RUN mkdir /work 
 

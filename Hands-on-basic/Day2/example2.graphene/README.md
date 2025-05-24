@@ -1,5 +1,5 @@
 # PURPOSE OF THE EXERCISE:
-## How to calculate and plot density-of-states (DOS) and band structure (spaghetti) of a graphene sheet.
+## How to calculate and plot density-of-states (DOS) of a graphene sheet.
 --------------------------------------------------------------------
 
 **Steps to perform:**
@@ -28,26 +28,6 @@
        gnuplot dos.gp
 
 
-### How to make a SPAGHETTI band-structure plot
-
-5. `pw.x` *bands* calculation (`calculation='bands'`) as to calculate
-    the eigenvalues at k-points along a specific k-path:
-
-       pw.x < pw.graphene.bands.in > pw.graphene.bands.out
-
-
-6. `bands.x` calculation as to make a suitable datafile for plotting:
-
-       bands.x < bands.graphene.in > bands.graphene.out
-
-    (the resulting datafile is written to `graphene.bands.dat.gnu`)
-
-
-7. plot the SPAGHETTI with gnuplot:
-
-       gnuplot spaghetti.gp
-       
-
 ### Setting the correct Fermi energy in gnuplot files
 
 To indicate the Fermi energy in DOS and spaghetti plots, let's enter the
@@ -59,9 +39,9 @@ correct value of Fermi energy in the two gnuplot files.
        
    this command prints the following line:
    
-       the Fermi energy is     0.9204 ev
+       the Fermi energy is     0.8967 ev
 
-9. Edit the `dos.gp` and `spaghetti.gp` files and insert the above
+9. Edit the `dos.gp` file and insert the above
    value of Fermi energy and uncomment the `set yzeroaxis lt -1` line,
    i.e., the top part of this files look like:
    
@@ -70,7 +50,6 @@ correct value of Fermi energy in the two gnuplot files.
        # ... and uncomment the following line
        set yzeroaxis lt -1
        
-10. Replot the DOS and spaghetti:
+10. Replot the DOS:
 
         gnuplot dos.gp
-        gnuplot spaghetti.gp

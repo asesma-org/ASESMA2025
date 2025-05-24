@@ -3,6 +3,7 @@
 
 # delete the si.etot_vs_kgrid if it exists
 rm -f data.dat
+rm -f Etot-vs-alat.dat
 
 echo 'alat, vol, etot' > data.dat
 
@@ -16,5 +17,7 @@ do
     
 
     echo $alat, $cell_volume, $etot >> data.dat
+
+    echo $alat, $etot >> Etot-vs-alat.dat
 
 done
