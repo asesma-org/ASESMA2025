@@ -1,8 +1,0 @@
-&BANDS
-
-outdir = './tmp',
-prefix='al',
-filband='bands.dat',
-/
-
-
