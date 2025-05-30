@@ -1,0 +1,55 @@
+Simplified instructions:
+
+1) Visit https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD
+and choose the VDM Version 1.9.3 that matches the computers' specifications (LINUX_64 OpenGL, CUDA, OptiX, OSPRay).
+
+2) Download the tar.gz (A Registration is needed)
+
+3) Un compress the folder vmd-1.9.3 from the  tar.gz file.
+
+4) Enter to the vmd-1.9.3  folder and run:  ./configure
+
+5) Enter to the src folder and run:  sudo make install
+
+6) Test the installation running: vmd
+
+Official instructions after downloading:
+
+Detailed instructions for compiling VMD from source code
+can be found in the programmer's guide.
+
+For quick installation of the binary distribution for Unix do the following:
+  1) Uncompress and untar the distribution into a working directory,
+     being sure to do this and subsequent steps as a non-root user.
+     In this working directory, there are several subdirectories such
+     as bin, src, doc, data, as well as this README and a configure script.
+     Change to this working directory after the unpacking is complete.
+
+  2) Edit the file 'configure'; change the values for
+     the $install_library_dir and $install_bin_dir to a directory in
+     which vmd data files and executables should be installed, be sure
+     that you installing into a clean target directory and not overwriting
+     an existing version of VMD (which would otherwise give problems):
+
+     $install_bin_dir is the location of the startup script 'vmd'.
+     It should be located in the path of users interested in running VMD.
+
+     $install_library_dir is the location of all other VMD files.
+     This included the binary and helper scripts.  It should not be
+     in the path.
+
+  3) A Makefile must be generated based on these configuration variables
+     by running "./configure".
+
+  4) After configuration is complete, cd to the src directory,
+     become root or use sudo if necessary, e.g., for installation
+     of VMD into /usr/local or other permission-protected system directories,
+     and type "make install".  This will install VMD in the two
+     directories listed above.  Note that running "make install"
+     twice will print error messages because you are attempting to
+     overwrite some read-only files.  Similarly, if you have incorrectly
+     specified the target installation directories or attempt to overwrite
+     an existing VMD installation, you will get error messages.
+
+  5) When installed, type 'vmd' to start (make sure the
+     $install_bin_dir directory is in your path).
