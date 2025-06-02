@@ -4,6 +4,8 @@
 
 ### Steps to perform:
 
+N.B. Open all the input files and try to understand them. Then, fill the parts that are left empty before running them.
+
 1. Run the SCF ground-state calculation
 
         mpirun -np 4 pw.x < AlAs.scf.in > AlAs.scf.out
@@ -24,4 +26,3 @@
 
         plotband.x < plotband.AlAs.in > plotband.AlAs.out
         gnuplot plot_dispersion.gp
-        atril phonon_dispersion.eps 

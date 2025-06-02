@@ -1,7 +1,0 @@
-&PROJWFC
-
-outdir = './tmp',
-prefix='al',
-filpdos='pdos.dat',
-/
-
