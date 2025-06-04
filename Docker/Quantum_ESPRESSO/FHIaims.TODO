@@ -1,0 +1,2 @@
+ - Deploy FHI-aims binaries and species into /source/FHIaims/
+ - Update number of CPUs in /source/FHIaims/vibesrc
