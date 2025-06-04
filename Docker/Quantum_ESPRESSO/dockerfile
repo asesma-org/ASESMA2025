@@ -111,6 +111,8 @@ COPY vibesrc                        /source/vibes/.vibesrc
 COPY FHIaims.TODO                   /source/FHIaims/TODO                       
 # CC: vibesrc is copied into homefoled in ENTRYPOINT, 
 #     TODO is just a list of things that need to be on site
+#### IMPORTANT: This also installs ASE Version 3.22. If you need to switch to a different/newer
+####            version, please contact carbogno@fhi-berlin.mpg.de, so that I can update my tutorials
 
 ## create work dir
 RUN mkdir /work 
