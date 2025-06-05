@@ -1,0 +1,27 @@
+Title Marks H2 calculated with deMon2k Version 6.3 VWN/DZVP/GEN-A2
+#
+# This calculation shows large deviation to 4c-ERI because of GEN-A2
+# To improve use GEN-An* or GEN-An** (n=2,3,4)
+#
+# SCF CONTROLS
+#
+SCFTYPE RKS
+VXCTYPE VWN
+AUXIS (GEN-A2)
+BASIS (STO-3G)
+MULTIPLICITY 1
+#
+# OUTPUT CONTROLS
+#
+PRINT MOS LCR
+#
+# TD-ADFT CONTROLS
+#
+CISTYPE RPA
+CISDIA JACOBI
+#
+# GEOMETRY
+#
+GEOMETRY CARTESIAN BOHR
+H 0.000000 0.000000 0.000000
+H 0.000000 0.000000 1.481211
