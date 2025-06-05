@@ -1,0 +1,310 @@
+ ******************************************************************************
+ ******************************************************************************
+ ***                                                                        ***
+ ***                              PROGRAM deMon2k                           ***
+ ***                                                                        ***
+ ***                        (VERSION 6.3.0, Dec. 2024)                      ***
+ ***                                                                        ***
+ ***     COPYRIGHT (C) BY THE INTERNATIONAL DEMON DEVELOPERS COMMUNITY      ***
+ ***                                                                        ***
+ ***  AUTHORS: A.M. Koster, G. Geudtner, A. Alvarez-Ibarra, M.C. Amirani,   ***
+ ***           P. Calaminici, A.A.M. Carranza, M.E. Casida, J. Carmona-     ***
+ ***           Espindola, J. Cuny, F.A. Delesma, R. Delgado-Venegas, V.D.   ***
+ ***           Dominguez, R. Flores-Moreno, G.U. Gamboa, A. Goursot, T.     ***
+ ***           Heine, K. Hermann, L.I. Hernandez Segura, A. Ipatov, F.      ***
+ ***           Janetzko, A. de la Lande, F. Louisnard, J. Martin del Campo, ***
+ ***           N. Pedroza Montero, L.G.M. Pettersson, D. Mejia-Rodriguez,   ***
+ ***           J. Reveles, J. Vasquez-Perez, A. Vela, B. Zuniga-Gutierrez   ***
+ ***           and D.R. Salahub                                             ***
+ ***                                                                        ***
+ ******************************************************************************
+ ******************************************************************************
+                                                                                
+
+ FIRST TIMING           DATE: SAT MAY 24 12:42:04 2025  TOTAL TIME:       0.019
+                                                                                
+
+ INITIALIZATION                   STEP TIME:     0.027  TOTAL TIME:       0.047
+
+ ******************************************************************************
+
+ Marks H2 calculated with deMon2k Version 6.3 VWN/DZVP/GEN-A2
+
+ ******************************************************************************
+
+ 
+ *** MOLECULAR SIMULATION DATA ***
+ 
+ MOLECULAR CHARGE: 0
+ NUMBER OF ATOMS: 2
+ MOLECULAR SIMULATION TYPE: QM ONLY
+ 
+ *** MOLECULAR QM DATA ***
+ 
+ MULTIPLICITY: 1
+ NUMBER OF QM ATOMS: 2
+ NUMBER OF ELECTRONS: 2
+ 
+ *** SCF OPTIONS ***
+ 
+ SCF THEORY: RESTRICTED KOHN-SHAM (RKS)
+ DIAGONALIZER: DSYEV
+ START GUESS: HUECKEL DENSITY
+ SCF TOLERANCE: 0.100E-04
+ POTENTIAL DENSITY: AUXILIARY DENSITY
+ NUMBER OF SCF ITERATIONS: 100
+ DIIS ACCELERATION: ON
+ XC-POTENTIAL: LSD - VWN
+ GRID TECHNIQUE: ADAPTIVE
+ GRID PRUNING: ON
+ GRID METHOD: CONVENTIONAL
+ GRID GENERATING FUNCTION: SCF
+ GRID TOLERANCE: 0.100E-04
+ ATOMIC WEIGHT FUNCTION: BECKE SCREENED
+ RADIAL QUADRATURE TYPE: GAUSS-CHEBYSHEV
+ SCF METHOD: DIRECT & DOUBLE ASYMPTOTIC EXPANSION
+ FREEZE AUXILIARY FUNCTIONS: OFF
+ NUMERICAL FIT SOLVER: SVD
+ SVD THRESHOLD: 0.100E-05
+ SCF SCREENING: 0.500E-10
+ SYMMETRY USE: NONE
+ ROTATION OF THE ANGULAR GRIDS: ON
+ SCF PRINTING UNTIL CYCLE 0
+ SPHERICAL ORBITALS WILL BE USED
+ 
+ *** CIS OPTIONS ***
+ 
+ CIS THEORY: RANDOM PHASE APPROXIMATION
+ SELECTED EXCITED STATE: 0
+ 
+ *** PRINT OPTIONS ***
+ 
+ PRINT MOLECULAR ORBITALS
+ 
+ *** ACTIVATED INTERFACE PORTS ***
+ 
+ FILE deMon.mol WILL BE WRITTEN
+ 
+ 
+ *** GEOMETRY ***
+
+
+ INPUT ORIENTATION IN BOHR
+
+  NO.  ATOM        X            Y            Z      Z-ATOM   MASS   TYPE OPTXYZ
+
+    1  H         0.000000     0.000000     0.000000     1     1.008  QM       
+    2  H         0.000000     0.000000     1.481211     1     1.008  QM       
+
+
+ 
+ 
+ *** ERI STATISTIC ***
+ 
+ Est. Integrated ERIs: 12
+ Est. Asymptotic ERIS: 0
+                                                                                
+
+ INPUT                            STEP TIME:     0.030  TOTAL TIME:       0.077
+ 
+ *** THE INPUT ORIENTATION IS USED ***
+ 
+ POINT GROUP: D*h
+ 
+ GROUP ORDER: 12
+
+
+ STANDARD ORIENTATION IN BOHR
+
+  NO.  ATOM        X              Y              Z        Z-ATOM   MASS   TYPE
+
+    1  H         0.000000       0.000000      -0.740606       1     1.008  QM
+    2  H         0.000000       0.000000       0.740606       1     1.008  QM
+                                                                                
+
+ SYMMETRY ANALYSIS                STEP TIME:     0.000  TOTAL TIME:       0.089
+ 
+ NUMBER OF TB ORBITALS: 2
+                                                                                
+
+ START GUESS                      STEP TIME:     0.096  TOTAL TIME:       0.186
+ 
+ 
+ GENERAL BASIS SET: (STO-3G)
+ 
+ NUMBER OF SHELLS: 2
+ NUMBER OF ORBITALS: 2
+ NUMBER OF PRIMITIVE GAUSSIAN EXPONENTS: 6
+ 
+ 
+ GENERAL AUXIS SET: (GEN-A2)
+ 
+ NUMBER OF AUXILIARY FUNCTION SETS: 4
+ NUMBER OF AUXILIARY FUNCTION SHELLS: 4
+ NUMBER OF AUXILIARY FUNCTION: 4
+                                                                                
+
+ AUXILIARY FUNCTION FIT           STEP TIME:     0.000  TOTAL TIME:       0.187  
+                                                                                
+
+ CORE INTEGRALS                   STEP TIME:     0.000  TOTAL TIME:       0.187
+                                                                                
+
+ NULLSPACE                        STEP TIME:     0.001  TOTAL TIME:       0.190
+
+
+ TIGHT-BINDING MO COEFFICIENTS OF CYCLE 1
+
+
+                                1          2
+                            -0.3492     1.0302
+ 
+                             2.0000     0.0000
+ 
+     1    1   H    1s        0.5536    -1.1645
+ 
+     2    2   H    1s        0.5536     1.1645
+                                                                                
+
+ ADAPTIVE GRID GENERATION         STEP TIME:     0.007  TOTAL TIME:       0.205
+                                                                                
+
+ GRID RETRIEVE                    STEP TIME:     0.002  TOTAL TIME:       0.208
+
+ CYCLE:    1    EUPPER =       -1.126270087232    CDMIX =        0.300000000000
+ CYCLE:    1    ELOWER =       -2.454470112498    SHIFT =        0.000000000000
+ CYCLE:    1    EXC    =       -0.674281398133    ERCDC =        1.507381587792
+ CYCLE:    1    ETOTAL =       -1.800551485365    ERROR =        1.328200025267
+
+ CYCLE:    2    EUPPER =       -1.126270087232    CDMIX =        0.300000000000
+ CYCLE:    2    ELOWER =       -1.126270087232    SHIFT =        0.000000000000
+ CYCLE:    2    EXC    =       -0.674281398133    ERCDC =        0.000000000000
+ CYCLE:    2    ETOTAL =       -1.800551485365    ERROR =       -0.000000000000
+
+ CYCLE:    3    EUPPER =       -1.126270087232    CDMIX =        0.100000000000
+ CYCLE:    3    ELOWER =       -1.126270087232    SHIFT =        0.000000000000
+ CYCLE:    3    EXC    =       -0.674281398133    ERCDC =        0.000000000000
+ CYCLE:    3    ETOTAL =       -1.800551485365    ERROR =       -0.000000000000
+ 
+ *** SCF CONVERGED ***
+ 
+
+
+ MO COEFFICIENTS OF CYCLE 3
+
+
+                                1          2
+                            -0.3395     0.3782
+ 
+                             2.0000     0.0000
+ 
+     1    1   H    1s        0.5536     1.1645
+ 
+     2    2   H    1s        0.5536    -1.1645
+
+
+ 
+ RANDOMIZED SCF GRID GENERATED IN 3 CYCLES
+ 
+
+ ELECTRONIC CORE ENERGY      =         -2.454470112
+ ELECTRONIC COULOMB ENERGY   =          1.328200025
+ ELECTRONIC HARTREE ENERGY   =         -1.126270087
+
+ EXCHANGE ENERGY             =         -0.577985136
+ CORRELATION ENERGY          =         -0.096205114
+ EXCHANGE-CORRELATION ENERGY =         -0.674190250
+
+ ELECTRONIC SCF ENERGY       =         -1.800460337
+ NUCLEAR-REPULSION ENERGY    =          0.675123261
+ TOTAL ENERGY                =         -1.125337077
+                                                                                
+
+ SCF ITERATION                    STEP TIME:     0.080  TOTAL TIME:       0.285
+ 
+ 
+ 
+ ***************************************
+ *** UV/VIS SPECTROSCOPY CALCULATION ***
+ ***************************************
+
+
+ MOLECULE ORIENTATION FOR CIS CALCULATION IN BOHR
+
+  NO.  ATOM        X              Y              Z        Z-ATOM   MASS   TYPE
+
+    1  H         0.000000       0.000000       0.000000       1     1.008  QM
+    2  H         0.000000       0.000000       1.481211       1     1.008  QM
+
+
+ ------------------------------------------------
+ COMMENT : EQUAL NUMBER OF S AND T STATES      1      1
+ ------------------------------------------------
+
+
+               EXCITATION ENERGIES       OSCILLATOR
+
+ STATE     [eV]      [cm^-1]      [nm]    STRENGTH     d<S^2>    MULT.
+
+     1   16.7836    0.135E+06     73.87   0.0000 T*    2.0000   3.0000
+     2   25.1271    0.203E+06     49.34   0.8727 S     0.0000   1.0000
+
+     * SPIN-FORBIDDEN TRANSITION
+
+
+ +=================================+
+   1   16.7836 eV T LAMBDA: 0.90
+ +-----------ALPHA-ALPHA-----------+
+                   [eV]     COEFF
+     1 -->    2   19.5304  -1.0000
+ +=================================+
+   2   25.1271 eV S LAMBDA: 0.90
+ +-----------ALPHA-ALPHA-----------+
+                   [eV]     COEFF
+     1 -->    2   19.5304   1.0000
+ +=================================+
+                                                                                
+
+ CIS CALCULATION                  STEP TIME:     0.024  TOTAL TIME:       0.309
+ 
+ TIMING STATISTICS (SECONDS)
+ 
+
+ TIMER ENTRY                    NUMBER OF CALLS   CUMUL. CPU TIME   CONTRIBUT.
+
+ INITIALIZATION                              1             0.027         8.7 %
+ INPUT                                       1             0.030         9.6 %
+ DIAGONALIZATION                            24             0.002         0.6 %
+ SYMMETRY ANALYSIS                           2             0.000         0.0 %
+ START GUESS                                 1             0.096        30.8 %
+ MATRIX MULTIPLICATION                      69             0.000         0.0 %
+ CORE INTEGRALS                              1             0.000         0.0 %
+ ORTHOGONALIZATION MATRIX                    1             0.000         0.0 %
+ AUXILIARY FUNCTION FIT                     18             0.013         4.2 %
+ CORE HAMILTONIAN                            1             0.000         0.0 %
+ SCF ITERATION                               1             0.080        25.6 %
+ NULLSPACE                                   1             0.001         0.3 %
+ NEAR J CALCULATION                          6             0.000         0.0 %
+ FAR J CALCULATION                           6             0.000         0.0 %
+ GRID INITIALIZATION                         3             0.010         3.2 %
+ ADAPTIVE GRID GENERATION                    2             0.018         5.8 %
+ GRID RETRIEVE                               2             0.004         1.3 %
+ XC POTENTIAL                                6             0.009         2.9 %
+ NEAR ERI CALCULATION                        6             0.000         0.0 %
+ FAR ERI CALCULATION                         6             0.000         0.0 %
+ CIS CALCULATION                             1             0.024         7.7 %
+ FXC KERNEL                                  2             0.004         1.3 %
+ CIS ITERATION                               1             0.005         1.6 %
+ TDMULVEC                                    2             0.005         1.6 %
+ CIS2AO                                      4             0.000         0.0 %
+ BLDTDOMAT                                   2             0.005         1.6 %
+ NEAR CIS CALCULATION                        2             0.000         0.0 %
+ FAR CIS CALCULATION                         2             0.000         0.0 %
+ TDIGMULVEC                                  4             0.004         1.3 %
+ TDFMULVEC                                   2             0.000         0.0 %
+ NEAR CIS ERI CALCULATION                    2             0.000         0.0 %
+ FAR CIS ERI CALCULATION                     2             0.000         0.0 %
+ TD AO to CIS                                4             0.000         0.0 %
+ FIXED GRID GENERATION                       1             0.000         0.0 %
+
+ FINAL TIMING           DATE: SAT MAY 24 12:42:04 2025  TOTAL TIME:       0.312
