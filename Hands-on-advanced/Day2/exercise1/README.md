@@ -1,6 +1,6 @@
 # Run the calculations in the following way:
 
-exercise-1.a 
+## exercise-1.a 
 
 Calculation of the projected density of states (PDOS) of CoO from DFT (PBEsol)
 
@@ -14,7 +14,7 @@ Calculation of the projected density of states (PDOS) of CoO from DFT (PBEsol)
 
   evince CoO_PDOS.eps
 
-exercise-1.b
+## exercise-1.b
  
 Calculation of the Hubbard U parameter for the Co-3d states.
 Modify the CoO.scf.in file by adding the HUBBARD card (see slides).
@@ -23,7 +23,7 @@ Modify the CoO.scf.in file by adding the HUBBARD card (see slides).
 
   hp.x < CoO.hp.in |tee CoO.hp.out
 
-exercise-1.c
+## exercise-1.c
 
 Calculation of the projected density of states (PDOS) of CoO from DFT+U.
 To do this, please make the same steps in Exercise 1.a and use the Hubbard U
