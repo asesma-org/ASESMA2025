@@ -1,0 +1,20 @@
+Python libraries:
+	pip install notebook
+	pip install numpy scipy matplotlib
+	pip install pickle numba
+	pip install ase chemiscope PyQt5
+
+
+i-Pi:
+	git clone https://github.com/i-pi/i-pi.git
+	source ~/i-pi/env.sh
+	echo ". ~/i-pi/env.sh" >> .bashrc
+	cd i-pi/drivers/f90/
+	make
+	To test run: i-pi
+NB: if you get an error, you need to install a Fortran compiler.
+
+
+Project:
+	git clone https://github.com/i-pi/pimd-mooc.git
+

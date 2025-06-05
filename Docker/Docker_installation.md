@@ -34,5 +34,22 @@ Run the following commands
 
 Restart the computer
 
+# Downloading and using docker image
+
+The precompiled image is available on Dockerhub, once the docker engine is installed run
+```
+docker pull cartaalberto/asesma_2025:latest
+```
+You can now run an interactive terminal by using the command:
+```
+docker run -p 8888:8888 --rm -it --shm-size=4g -e USER_ID=`id -u` -e GROUP_ID=`id -g` -v /home:/home cartaalberto/asesma_2025:latest bash
+```
+
+You might want to alias the command and put it in the .bashrc
+```
+alias asesma_qe="docker run -p 8888:8888 --rm -it --shm-size=4g -e USER_ID=`id -u` -e GROUP_ID=`id -g` -v /home:/home cartaalberto/asesma_2025:latest bash"
+```
+
+
 
 
