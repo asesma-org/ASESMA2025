@@ -1,6 +1,6 @@
 Perform a variable-cell optimization: 
 
-mpirun -np 2 pw.x < graphite.vc-relax.in |tee graphite.vc-relax.out
+mpirun -n 2 pw.x < graphite.vc-relax.in |tee graphite.vc-relax.out
 
 Study different cases:
  1. input_dft = 'vdw-DF'     @PBE pseudo (non-local)       C.pbe-rrkjus.UPF
