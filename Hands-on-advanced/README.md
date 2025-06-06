@@ -1,6 +1,6 @@
 # Advanced hands-on
 
-In each subfolder you will find a file README.md with the basic instructions on how to run the exercises. A more detailed description of the content of the exercises is given in the PDF file containing the slides that the lecturers will present during the hands-on sessions. All the pseudopotential files needed to run the exercises can be found in the ```files``` folder.
+In each subfolder you will find a file README.md with the basic instructions on how to run the exercises. A more detailed description of the content of the exercises is given in the PDF file containing the slides that the lecturers will present during the hands-on sessions. All the pseudopotential files needed to run the exercises can be found in the ```pseudo``` folder.
 
 # Exercises
 
