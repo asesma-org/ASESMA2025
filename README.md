@@ -18,3 +18,5 @@ This is a collection of lectures and hands-on based on density-functional theory
 1. https://www.quantum-espresso.org/
 2. https://fhi-aims.org/
 3. https://siesta-project.org/siesta/About/overview.html
+
+# Troubleshooting
