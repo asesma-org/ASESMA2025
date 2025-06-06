@@ -41,4 +41,5 @@ axs[1].plot(x_odd, odd_diff, linestyle='-', color= "red", linewidth=2, marker='x
 # Show the plot
 plt.tight_layout()
 plt.legend()
+plt.savefig("en_vs_kgrid.png", dpi=300, bbox_inches='tight')
 plt.show()

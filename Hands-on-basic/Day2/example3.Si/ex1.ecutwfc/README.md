@@ -16,4 +16,4 @@
        
 4. To plot the data, run:
 	
-       python ./plot_etot_ecut.py
+       python3 ./plot_etot_ecut.py

@@ -20,7 +20,7 @@
 
 8. Plot the data with python:
     
-    `python plot_etot_kgrid.py`
+    `python3 plot_etot_kgrid.py`
      
 
 
