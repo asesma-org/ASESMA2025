@@ -1,7 +1,8 @@
 # Project1
 
  Title of the project:
- Testing the Transferability of Integrals in Multiplet-Sum (MS) Density-Functional Theory (DFT)
+ Diagrammatic Multiplet-Sum Method (MSM) Density-Functional Theory (DFT):
+ III. Inclusion of Relaxation and Application to LiH
 
  Project supervisor: Mark Casida
 
