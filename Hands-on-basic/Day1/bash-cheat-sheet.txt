@@ -1,0 +1,24 @@
+#### navigating directories #####
+pwd                       # Print current directory path
+ls                        # List directories
+ls -l                     # List directories in long form
+ls -t                     # List directories by modification time, newest first
+cd /home		  # Go to directory
+
+####### Moving across directories/ creating and remove files #####
+mkdir dir 			# Create directory named 'dir'
+cp hello.txt hello2.txt		# Copy file
+mv hello.txt hello2.txt		# Move file (rename)
+rm hello.txt			# Remove file
+
+######## Read files #####
+cat hello.txt			# Print all contents of the file hello.txt
+less hello.txt			# Print some contents at a time
+head hello.txt			# Print top 10 lines of the file
+tail hello.txt			# Print last 10 lines of the file
+grep 'Hello' /hello.txt		# Search for occurence 'Hello' in the file
+
+###### Run #####
+mpirun -n 2 pw.x -in input.in > output.out	# Run the executable 'pw.x' in parallel with 2 nodes, reading the input input.in and producing the output output.out
+
+
