@@ -2,7 +2,7 @@
 pwd                       # Print current directory path
 ls                        # List directories
 ls -l                     # List directories in long form
-ls -t                     # List directories by modification time, newest first
+ls -lrt                     # List directories by modification time, newest first
 cd /home		  # Go to directory
 
 ####### Moving across directories/ creating and remove files #####
