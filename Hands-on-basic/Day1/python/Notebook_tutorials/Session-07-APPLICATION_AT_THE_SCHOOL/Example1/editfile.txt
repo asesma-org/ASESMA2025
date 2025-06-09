@@ -1,0 +1,6 @@
+Welcome to the 8th ASESMA.
+ASESMA 2025, also known as the 8th African School on Electronic Structure Methods
+and Applications (smr 4081), is a premier event that brings together emerging scientists
+and leading researchers in the field of computational materials science.
+The 2025 edition will focus on modern approaches to electronic structure calculations, 
+including density functional theory, pseudopotentials, and ab initio molecular dynamics.
