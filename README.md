@@ -11,6 +11,7 @@ This is a collection of lectures and hands-on based on density-functional theory
 ## PROJECTS:
  - [PROJECTS](PROJECTS) List of research projectors for the 2nd week of the school
 
+  
 ## Codes:
  - [Installation-of-codes](Installation-of-codes) Instructions on how to install various codes for the school
 
