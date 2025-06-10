@@ -1,0 +1,7 @@
+# save this as geometry.in
+lattice_vector 0.00 2.72 2.72
+lattice_vector 2.72 0.00 2.72
+lattice_vector 2.72 2.72 0.00
+
+atom_frac 0.00 0.00 0.00 Si
+atom_frac 0.25 0.25 0.25 Si

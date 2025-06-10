@@ -1,0 +1,42 @@
+[vibes.run]    run phonopy workflow with settings from phonopy.in
+
+[calculator]   Update aims k_grid with kpt density of 2 to [4, 4, 4]
+[calculator]   .. add `sc_accuracy_rho: 1e-06` to parameters (default)
+[calculator]   .. add `relativistic: atomic_zora scalar` to parameters (default)
+[calculator]   .. add `output_level: MD_light` to parameters (default)
+[calculator]   Add basisset `light` for atom `Si` to basissets folder.
+[calculator]   Calculator: aims
+[calculator]   settings:
+[calculator]     xc: pw-lda
+[calculator]     compute_forces: True
+[calculator]     k_grid: [4, 4, 4]
+[calculator]     sc_accuracy_rho: 1e-06
+[calculator]     relativistic: atomic_zora scalar
+[calculator]     output_level: MD_light
+[calculator]     use_pimd_wrapper: ('localhost', 10002)
+[calculator]     aims_command: mpirun -n 8 /Users/carbogno/Projects/2024_LTO/Code/build/aims.240206.scalapack.mpi.x
+[calculator]     species_dir: /Users/carbogno/Projects/2025_ASESMA/00_tutorial/02_phonons/input_mine/sc_0016/phonopy/basissets
+[vibes]        Run phonopy workflow in working directory
+  /Users/carbogno/Projects/2025_ASESMA/00_tutorial/02_phonons/input_mine/sc_0016/phonopy
+[phonopy.postprocess] Start phonopy postprocess:
+[trajectory]   Parse `/Users/carbogno/Projects/2025_ASESMA/00_tutorial/02_phonons/input_mine/sc_0016/phonopy/trajectory.son`
+[son] open file:  /Users/carbogno/Projects/2025_ASESMA/00_tutorial/02_phonons/input_mine/sc_0016/phonopy/trajectory.son
+[watchdog]     seems we are not on a cluster, nothing to do for watchdog
+[watchdog]     walltime not set, disable watchdog
+[socketio]     Use SocketIO with host localhost and port 10002
+[backup]       /Users/carbogno/Projects/2025_ASESMA/00_tutorial/02_phonons/input_mine/sc_0016/phonopy/calculations does not exist, nothing to back up.
+[vibes]        Compute structure 1 of 1: working
+[vibes]        Compute structure 1 of 1: finished.
+[vibes]        Close the socket
+[vibes]        Start postprocess.
+[phonopy.postprocess] Start phonopy postprocess:
+[trajectory]   Parse `phonopy/trajectory.son`
+[son] open file:  phonopy/trajectory.son
+[trajectory]   .. time elapsed: 0.000s
+[trajectory]   .. create atoms
+[trajectory]   .. time elapsed: 0.859s
+[trajectory]   .. set raw hash
+[trajectory]   .. time elapsed: 0.000s
+[trajectory]   .. done in 0.859s
+[phonopy.postprocess] .. done in 0.991s
+[vibes]        done.

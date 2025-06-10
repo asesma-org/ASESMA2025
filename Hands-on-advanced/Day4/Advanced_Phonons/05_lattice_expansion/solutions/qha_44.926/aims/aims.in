@@ -1,0 +1,28 @@
+# configfile written at 2025/05/20 19:27:30
+
+[machine]
+basissetloc:                   /u/mrinaldi/programs/fhiaims/polaron/species_defaults/defaults_2020
+aims_command:                  /u/mrinaldi/run_aims.sh
+
+[files]
+geometry:                      geometry.in
+
+[calculator]
+name:                          aims
+
+[calculator.parameters]
+xc:                            pw-lda
+k_grid:                        [8, 8, 8]
+sc_accuracy_rho:               1e-06
+relativistic:                  atomic_zora scalar
+output_level:                  MD_light
+use_pimd_wrapper:              ('localhost', 12347)
+
+[calculator.kpoints]
+density:                       3.5
+
+[calculator.basissets]
+Si:                            light_spd
+
+[calculator.socketio]
+port:                          12345

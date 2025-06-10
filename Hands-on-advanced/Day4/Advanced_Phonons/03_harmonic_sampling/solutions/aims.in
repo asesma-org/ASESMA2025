@@ -1,0 +1,19 @@
+[files]
+geometries:                    samples_300K/geometry.in.*
+primitive:                     geometry.in.primitive
+supercell:                     geometry.in.supercell
+
+[calculator]
+name:                          aims
+socketio:                      true
+workdir:                       aims_300K
+
+[calculator.parameters]
+xc:                            pw-lda
+compute_forces:                true
+
+[calculator.kpoints]
+density:                       2
+
+[calculator.basissets]
+default:                       light

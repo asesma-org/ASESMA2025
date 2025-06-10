@@ -1,0 +1,8 @@
+dict(compute_forces=True,
+     k_grid=[6, 6, 6],
+     output_level='MD_light',
+     relativistic='atomic_zora scalar',
+     sc_accuracy_rho=1e-06,
+     species_dir='/raven/u/mrinaldi/asesma2025/05_lattice_expansion/solutions/qha_37.590/phonopy/basissets',
+     use_pimd_wrapper=['localhost', 12348],
+     xc='pw-lda')

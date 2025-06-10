@@ -1,0 +1,29 @@
+[files]
+geometry:                      geometry.in
+
+[calculator]
+name:                          aims
+socketio:                      True
+
+[calculator.parameters]
+xc:                            pw-lda
+use_local_index:               True
+load_balancing:                True
+collect_eigenvectors:          False
+k_grid:                        [1, 1, 1]
+
+
+[calculator.basissets]
+default:                       light
+
+[phonopy]
+supercell_matrix:              [-6, 6, 6, 6, -6, 6, 6, 6, -6]
+displacement:                  0.01
+is_diagonal:                   False
+is_plusminus:                  auto
+symprec:                       1e-05
+
+[slurm]
+nodes: 20
+name:  phonopy
+queue: standard96

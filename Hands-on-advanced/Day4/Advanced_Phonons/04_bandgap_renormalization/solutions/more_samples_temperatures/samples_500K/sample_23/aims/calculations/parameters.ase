@@ -1,0 +1,7 @@
+dict(k_grid=[4, 4, 4],
+     output_level='MD_light',
+     relativistic='atomic_zora scalar',
+     sc_accuracy_rho=1e-06,
+     species_dir='/Users/carbogno/Projects/2025_ASESMA/00_tutorial/04_bandgap_renormalization/solutions/converged/samples_500K/sample_23/aims/basissets',
+     use_pimd_wrapper=['localhost', 10005],
+     xc='pw-lda')
