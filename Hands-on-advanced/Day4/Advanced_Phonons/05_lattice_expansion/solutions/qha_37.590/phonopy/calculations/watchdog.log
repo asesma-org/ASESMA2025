@@ -1,5 +1,0 @@
-# Walltime Watchdog 
-#   walltime:     437s
-#   buffer steps: 2
-# Time                  n_call  increment buffer_time  time_left    elapsed
-2025/05/20 19:24:48          0      103.1      206.1      436.9      103.1
