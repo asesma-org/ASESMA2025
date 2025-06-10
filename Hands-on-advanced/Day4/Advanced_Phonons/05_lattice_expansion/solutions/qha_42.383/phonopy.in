@@ -1,0 +1,27 @@
+[files]
+geometry:                      geometry.in
+
+[calculator]
+name:                          aims
+socketio:                      True
+
+[calculator.parameters]
+xc:                            pw-lda
+compute_forces:                true
+
+[calculator.kpoints]
+density:                       2
+
+[calculator.basissets]
+Si:                            light
+
+[phonopy]
+supercell_matrix:              [-1,  1,  1,  1, -1,  1,  1,  1, -1]
+displacement:                  0.01
+is_diagonal:                   False
+is_plusminus:                  auto
+symprec:                       1e-05
+q_mesh:                        [45, 45, 45]
+workdir:                       phonopy
+
+

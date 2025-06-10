@@ -1,0 +1,26 @@
+# configfile written at 2025/06/10 17:54:08
+
+[machine]
+basissetloc:                   /home/triqs/FHI_local/FHI_aims/fhi-aims.250320_1/species_defaults/defaults_2020/
+aims_command:                  /home/triqs/FHI_local/FHI_aims/fhi-aims.250320_1/build/aims_run.sh
+
+[files]
+geometry:                      geometry.in
+
+[calculator]
+name:                          aims
+socketio:                      True
+
+[calculator.parameters]
+xc:                            pw-lda
+k_grid:                        [6, 6, 6]
+sc_accuracy_rho:               1e-06
+relativistic:                  atomic_zora scalar
+output_level:                  MD_light
+use_pimd_wrapper:              ('localhost', 10002)
+
+[calculator.kpoints]
+density:                       2
+
+[calculator.basissets]
+Si:                            light
