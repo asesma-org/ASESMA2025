@@ -115,7 +115,7 @@ The script helps you with
 extracting the band gaps and plot temperature dependence of the band gap, saved as `Band_gap_vs_Temperature.png`.
 Which trends do you observe? 
 
-Note that the `solution` folder also features an additional folder called `more_samples_temperatures`. Here, more samples per temperature and more temperatures are explored. What trends do you observe?
+Note that the `solution` folder also features an additional folder called `more_samples_temperatures`. Here, more samples per temperature and more temperatures are explored. What trends do you observe, when executing the `postprocess.py` script in this directory?
 
 
 <script type="text/x-mathjax-config">
