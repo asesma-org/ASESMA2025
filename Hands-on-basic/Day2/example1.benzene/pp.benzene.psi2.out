@@ -1,0 +1,132 @@
+
+     Program POST-PROC v.7.4 starts on 10Jun2025 at 15:32:50 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+         "P. Giannozzi et al., J. Chem. Phys. 152 154105 (2020);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI), running on     1 processors
+
+     MPI processes distributed on     1 nodes
+     6858 MiB available memory on the printing compute node when the environment starts
+
+
+     Reading xml data from directory:
+
+     ./tmp_benz/benzene.save/
+     file C.pbe-rrkjus.UPF: wavefunction(s)  2S 2P renormalized
+     file H.pbe-rrkjus.UPF: wavefunction(s)  1S renormalized
+
+     IMPORTANT: XC functional enforced from input :
+     Exchange-correlation= PBE
+                           (   1   4   3   4   0   0   0)
+     Any further DFT definition will be discarded
+     Please, verify this is what you really want
+
+
+     G-vector sticks info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Sum        6869    2749    681               273079    69025    8635
+
+     Using Slab Decomposition
+
+
+     negative rho (up, down):  2.853E-03 0.000E+00
+
+     Calling punch_plot, plot_num =   7
+
+     Plotting k_point =   1  band =  1
+     Writing data to file  psi2.benzene_K001_B001
+
+     Calling punch_plot, plot_num =   7
+
+     Plotting k_point =   1  band =  2
+     Writing data to file  psi2.benzene_K001_B002
+
+     Calling punch_plot, plot_num =   7
+
+     Plotting k_point =   1  band =  3
+     Writing data to file  psi2.benzene_K001_B003
+
+     Calling punch_plot, plot_num =   7
+
+     Plotting k_point =   1  band =  4
+     Writing data to file  psi2.benzene_K001_B004
+
+     Calling punch_plot, plot_num =   7
+
+     Plotting k_point =   1  band =  5
+     Writing data to file  psi2.benzene_K001_B005
+
+     Calling punch_plot, plot_num =   7
+
+     Plotting k_point =   1  band =  6
+     Writing data to file  psi2.benzene_K001_B006
+
+     Calling punch_plot, plot_num =   7
+
+     Plotting k_point =   1  band =  7
+     Writing data to file  psi2.benzene_K001_B007
+
+     Calling punch_plot, plot_num =   7
+
+     Plotting k_point =   1  band =  8
+     Writing data to file  psi2.benzene_K001_B008
+
+     Calling punch_plot, plot_num =   7
+
+     Plotting k_point =   1  band =  9
+     Writing data to file  psi2.benzene_K001_B009
+
+     Calling punch_plot, plot_num =   7
+
+     Plotting k_point =   1  band = 10
+     Writing data to file  psi2.benzene_K001_B010
+
+     Calling punch_plot, plot_num =   7
+
+     Plotting k_point =   1  band = 11
+     Writing data to file  psi2.benzene_K001_B011
+
+     Calling punch_plot, plot_num =   7
+
+     Plotting k_point =   1  band = 12
+     Writing data to file  psi2.benzene_K001_B012
+
+     Calling punch_plot, plot_num =   7
+
+     Plotting k_point =   1  band = 13
+     Writing data to file  psi2.benzene_K001_B013
+
+     Calling punch_plot, plot_num =   7
+
+     Plotting k_point =   1  band = 14
+     Writing data to file  psi2.benzene_K001_B014
+
+     Calling punch_plot, plot_num =   7
+
+     Plotting k_point =   1  band = 15
+     Writing data to file  psi2.benzene_K001_B015
+
+     Calling punch_plot, plot_num =   7
+
+     Plotting k_point =   1  band = 16
+     Writing data to file  psi2.benzene_K001_B016
+     Reading data from file  psi2.benzene_K001_B001
+
+     Writing data to be plotted to file psi2.benzene_K001_B001.xsf
+     Plot Type: 3D                     Output format: XCrySDen     
+     Reading data from file  psi2.benzene_K001_B002
+
+     Writing data to be plotted to file psi2.benzene_K001_B002.xsf
+     Plot Type: 3D                     Output format: XCrySDen     
+     Reading data from file  psi2.benzene_K001_B003
+
+     Writing data to be plotted to file psi2.benzene_K001_B003.xsf
+     Plot Type: 3D                     Output format: XCrySDen     

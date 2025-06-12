@@ -1,5 +1,5 @@
 # set Fermi energy to correct value
-Efermi=0.0
+Efermi=0.8959
 # ... and uncomment the following line
 #set yzeroaxis lt -1
 
