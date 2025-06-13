@@ -1,0 +1,8 @@
+# Compute the backbone dihedral angle phi, defined by atoms C-N-CA-C
+phi: TORSION ATOMS=5,7,9,15
+# Compute the backbone dihedral angle psi, defined by atoms N-CA-C-N
+psi: TORSION ATOMS=7,9,15,17
+metad: METAD ARG=phi,psi PACE=250 HEIGHT=1.2 BIASFACTOR=8 SIGMA=0.35,0.35 FILE=HILLS
+
+# Print the two collective variables on COLVAR file every step
+PRINT ARG=phi,psi FILE=COLVAR STRIDE=1

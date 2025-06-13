@@ -1,0 +1,65 @@
+;	title                    = vacuum simulation
+;
+define              =
+; integrator
+integrator          =  md
+nsteps              =  2500000
+dt                  =  0.002
+;
+; removing CM translation and rotation
+comm_mode           =  Angular
+nstcomm             =  1000
+;
+; output control
+;nstxout                  = 0
+;nstvout                  = 0
+;nstfout                  = 0
+;frequency to write energies to log file
+nstlog                   = 5000
+;frequency to write energies to energy file
+nstenergy                = 5000
+;frequency to write coordinates to xtc trajectory
+nstxout-compressed                = 500
+;group(s) to write to xtc trajectory
+compressed-x-grps                 = System
+;
+; neighbour searching
+;nstlist             = 1
+;ns_type             = simple
+pbc                 = xyz
+rlist               = 1.2
+periodic_molecules  = no
+verlet-buffer-tolerance = -1
+;
+; electrostatic
+rcoulomb            = 1.2
+coulombtype         = Cut-off
+;
+; vdw
+vdw-type            = Cut-off
+rvdw = 1.2
+;
+; constraints
+constraints              = h-bonds
+constraint-algorithm     = lincs
+lincs_iter               = 4
+;
+; temperature
+Tcoupl              = v-rescale
+tc_grps             = system
+tau_t               = 0.1
+ref_t               = 300
+;
+; pression
+Pcoupl              =  no
+;Pcoupl              =  berendsen
+;Pcoupltype          =  isotropic
+;tau_p               =  0.5
+;compressibility     =  4.5e-5
+;ref_p               =  1.0
+;
+; initial velocities
+gen_vel             = yes
+gen_temp            = 300
+gen_seed            = 173529
+
