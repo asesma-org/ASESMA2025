@@ -32,7 +32,7 @@ Time-Dependent Density-Functional Theory" Annu. Rev. Phys. Chem. 63,
 287 (2012).
 
 [CFK2012] J. Carmona-Espindola, R. Flores-Moreno, and A. M. Koster,
-"Static and Dynamic First Hhyperpolarizabilities from Time-Dependent Auxiliary
+"Static and Dynamic First Hyperpolarizabilities from Time-Dependent Auxiliary
 Density Perturbation Theory", Int. J. Quantum. Chem. 112, 3461 (2012).
 
 [CCGK2012] P. Calaminici, J. Carmona-Espindola, G. Geudtner, and A.M. Koster,
@@ -55,6 +55,10 @@ M.E. Casida, A.M. Koster, A. Vela, and C. Jodicke Jamorski,
 ''Excitation Energies from an Auxiliary-Function Formulation of 
 Time-Dependent Density-Functional Response Theory with Charge Conservation 
 Constraint'', J. Molec. Struct. (Theochem) 762, 179 (2006).
+
+[KRC2004] A.M. Koster, J.U. Reveles, J.M. del Campo, "Calculation
+of exchange-correlation potenitals with auxiliary function densities",
+J. Chem. Phys. 121, 3417 (2004).
 
 [C2001] M.E. Casida, "Jacob's ladder for time-dependent density-functional 
 theory: Some rungs on the way to photochemical heaven", in Accurate 
