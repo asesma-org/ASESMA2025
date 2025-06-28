@@ -17,4 +17,4 @@ set label "Efermi" at 2.8,0.50
 !set key center
 set xtics ("W" 0.0000, "{/Symbol G}" 1.1180, "X" 2.1180, "W" 2.6180, "L" 3.3251,"{/Symbol G}" 4.1912)
 
-plot [0:4.1912][-12:10] 'bands.dat.gnu' u 1:($2-Efermi) notitle  w lines lw 3 lc "black"
+plot [0:4.1912][-12:10] 'bands.dat.gnu' u 1:($2-EFermi) notitle  w lines lw 3 lc "black"

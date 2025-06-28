@@ -1,0 +1,165 @@
+
+---
+title: "Python Basics"
+subtitle: "Arrays and plotting"
+format:
+  revealjs:
+    slide-number: true
+    smaller: true
+    width: 1050
+    height: 800
+    chalkboard:
+      buttons: false
+    preview-links: auto
+    css: styles.css # If you have a custom CSS file
+    footer: 'Alberto Carta / Python Basics' # Customize this footer
+resources:
+  - demo.pdf # Remove if not needed
+---
+
+## Welcome to Python Basics!
+
+This presentation will introduce you to fundamental concepts in Python, focusing on working with data. Today, we'll learn:
+
+* **Loading Data from a File:** How to bring your data into Python, specifically from a `.dat` file.
+* **Plotting Data:** Visualizing your insights, focusing on `Etot` vs. `alat` from the loaded data.
+* We'll primarily use the powerful libraries **NumPy** and **Matplotlib**.
+
+---
+
+## Your First Python Code
+
+Let's begin with a classic: printing "Hello, Python!" to the console. This simple step demonstrates how to execute basic code and view its output.
+
+``` {.python}
+# This is a comment - it's ignored by Python when the code runs.
+print("Hello, Python!")
+```
+
+**What's happening here?**
+
+* `print()` is a built-in **function** in Python used to display values to the standard output (usually your terminal or console).
+* `"Hello, Python!"` is a **string**, which is a sequence of characters enclosed within single or double quotes.
+
+---
+
+## Reading Data from a File: `Etot-vs-alat.dat`
+
+First, we import the necessary libraries:
+
+```{.python}
+import numpy as np
+```
+
+Then, we read the data from the file, using comma as the delimiter:
+
+```{.python}
+data = np.loadtxt('Etot-vs-alat.dat', delimiter=',')
+```
+
+Next, we extract the `alat` and `Etot` columns:
+
+```{.python}
+alat = data[:, 0]
+Etot = data[:, 1]
+```
+## Plotting Data: Basics
+
+::: columns
+::: column
+```{.python}
+import matplotlib.pyplot as plt
+plt.plot(alat, Etot)
+plt.show()
+```
+
+`matplotlib` is the biggest plotting library in python and the one we will use at ASESMA
+
+`plt.plot` graphs the data
+
+:::
+::: column
+![](Etot_vs_alat_simplest.png)
+
+:::
+:::
+
+---
+
+## Plotting Data: Add Labels
+
+::: columns
+::: column
+```{.python}
+import matplotlib.pyplot as plt
+plt.plot(alat, Etot)
+plt.xlabel("Lattice constant [Angstrom]", size=14)
+plt.ylabel("Etot [Ry]", size=14)
+plt.show()
+```
+`xlabel` and `ylabel` label the axes
+
+`size` determines the fontsize
+
+
+:::
+::: column
+![](Etot_vs_alat_labels.png)
+
+:::
+:::
+---
+
+
+
+## Plotting Data: Add legend and title
+
+::: columns
+::: column
+```{.python}
+import matplotlib.pyplot as plt
+plt.plot(alat, Etot, label="Si")
+plt.xlabel("Lattice constant [Angstrom]", size=14)
+plt.ylabel("Etot [Ry]", size=14)
+plt.legend()
+plt.show()
+```
+The `label` key in the `plt.plot` method allows
+
+You also need `plt.legend()`
+
+
+:::
+::: column
+![](Etot_vs_alat_legend.png)
+
+:::
+:::
+---
+
+
+## Plotting Data: final touches
+
+::: columns
+::: column
+```{.python}
+import matplotlib.pyplot as plt
+plt.plot(alat, Etot, label="Si", marker='o')
+plt.xlabel("Lattice constant [Angstrom]", size=14)
+plt.ylabel("Etot [Ry]", size=14)
+plt.legend()
+plt.title("Silicon bulk energy")
+plt.grid(True)
+```
+
+
+:::
+::: column
+![](Etot_vs_alat.png)
+
+:::
+:::
+---
+
+
+## Questions?

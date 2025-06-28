@@ -1,0 +1,57 @@
+[vibes.run]    run relaxation workflow with settings from relaxation.in
+
+[relaxation]   ** /raven/u/mrinaldi/asesma2025/01_relaxation/relaxation/trajectory.son does not exist, nothing to prepare
+[calculator]   Update aims k_grid with kpt density of 2 to [6, 6, 6]
+[calculator]   .. add `sc_accuracy_rho: 1e-06` to parameters (default)
+[calculator]   .. add `relativistic: atomic_zora scalar` to parameters (default)
+[calculator]   .. add `output_level: MD_light` to parameters (default)
+[calculator]   Add basisset `light` for atom `Si` to basissets folder.
+[calculator]   Calculator: aims
+[calculator]   settings:
+[calculator]     xc: pw-lda
+[calculator]     compute_forces: True
+[calculator]     k_grid: [6, 6, 6]
+[calculator]     sc_accuracy_rho: 1e-06
+[calculator]     relativistic: atomic_zora scalar
+[calculator]     output_level: MD_light
+[calculator]     compute_analytical_stress: True
+[calculator]     use_pimd_wrapper: ('localhost', 10011)
+[calculator]     aims_command: /u/mrinaldi/run_aims.sh
+[calculator]     species_dir: /raven/u/mrinaldi/asesma2025/01_relaxation/relaxation/basissets
+[relaxation]   filter settings:
+[relaxation]     hydrostatic_strain: False
+[relaxation]     constant_volume: False
+[relaxation]     scalar_pressure: 0.0
+[relaxation]     mask: None
+[relaxation]   driver: BFGS
+[relaxation]   settings:
+[relaxation]     type: optimization
+[relaxation]     optimizer: BFGS
+[relaxation]     maxstep: 0.2
+[socketio]     Use SocketIO with host localhost and port 10011
+[relaxation]   filter settings:
+[relaxation]     hydrostatic_strain: False
+[relaxation]     constant_volume: False
+[relaxation]     scalar_pressure: 0.0
+[relaxation]     mask: None
+[relaxation]   Start step 0
+[relaxation]   Step 0 finished.
+[relaxation]   .. residual force:  0.000 meV/AA
+[relaxation]   .. residual stress: 397.058 meV/AA**3
+[vibes]        .. Space group:     Fd-3m (227)
+[relaxation]   clean atoms before logging
+[relaxation]   .. log
+[relaxation]   Step 1 finished.
+[relaxation]   .. residual force:  0.000 meV/AA
+[relaxation]   .. residual stress: 5.082 meV/AA**3
+[vibes]        .. Space group:     Fd-3m (227)
+[relaxation]   clean atoms before logging
+[relaxation]   .. log
+[relaxation]   Step 2 finished.
+[relaxation]   .. residual force:  0.000 meV/AA
+[relaxation]   .. residual stress: 0.113 meV/AA**3
+[vibes]        .. Space group:     Fd-3m (227)
+[relaxation]   clean atoms before logging
+[relaxation]   .. log
+[relaxation]   Relaxation converged.
+[relaxation]   done.

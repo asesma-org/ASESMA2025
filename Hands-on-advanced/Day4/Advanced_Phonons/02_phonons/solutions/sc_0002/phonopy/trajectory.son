@@ -1,0 +1,112 @@
+{"Phonopy": {
+  "version": "2.19.1",
+  "primitive": {
+    "pbc": [true, true, true],
+    "cell": 
+        [[ 1.00000000000000e-10,  2.70441628719800e+00,  2.70441628716700e+00],
+         [ 2.70441629429400e+00,  8.30000000000000e-11,  2.70441628718400e+00],
+         [ 2.70441629425700e+00,  2.70441628717900e+00,  1.20000000000000e-10]],
+    "positions": 
+        [[ 6.49059910631530e-11,  7.30192397544000e-11,  3.51574117355360e-11],
+         [ 1.35220814709784e+00,  1.35220814354198e+00,  1.35220814358259e+00]],
+    "velocities": 
+        [[ 0.00000000000000e+00,  0.00000000000000e+00,  0.00000000000000e+00],
+         [ 0.00000000000000e+00,  0.00000000000000e+00,  0.00000000000000e+00]],
+    "symbols": [[2, "Si"]],
+    "masses": [[2, 28.085]],
+    "info": {
+}},
+  "supercell_matrix": [[1, 0, 0], [0, 1, 0], [0, 0, 1]],
+  "symprec":  1.00000000000000e-05,
+  "displacement_dataset": {
+    "natom": 2,
+    "first_atoms": [{"number": 0, "displacement": [2.614637341661707e-13, 0.007071067811906002, 0.007071067811824948]}]},
+  "displacements": [[0, 2.614637341661707e-13, 0.007071067811906002, 0.007071067811824948]]},
+"calculator": {
+  "calculator": "Aims",
+  "calculator_parameters": {
+    "xc": "pw-lda",
+    "compute_forces": true,
+    "k_grid": [6, 6, 6],
+    "sc_accuracy_rho":  1.00000000000000e-06,
+    "relativistic": "atomic_zora scalar",
+    "output_level": "MD_light",
+    "use_pimd_wrapper": ["localhost", 10002],
+    "species_dir": "/Users/carbogno/Projects/2025_ASESMA/00_tutorial/02_phonons/input_mine/sc_0002/phonopy/basissets"}},
+"atoms": {
+  "pbc": [true, true, true],
+  "cell": 
+    [[ 1.00000000000000e-10,  2.70441628719800e+00,  2.70441628716700e+00],
+     [ 2.70441629429400e+00,  8.30000000000000e-11,  2.70441628718400e+00],
+     [ 2.70441629425700e+00,  2.70441628717900e+00,  1.20000000000000e-10]],
+  "positions": 
+    [[ 6.49059910631530e-11,  7.30192397544000e-11,  3.51574117355360e-11],
+     [ 1.35220814709784e+00,  1.35220814354198e+00,  1.35220814358259e+00]],
+  "velocities": 
+    [[ 0.00000000000000e+00,  0.00000000000000e+00,  0.00000000000000e+00],
+     [ 0.00000000000000e+00,  0.00000000000000e+00,  0.00000000000000e+00]],
+  "symbols": [[2, "Si"]],
+  "masses": [[2, 28.085]],
+  "info": {
+}},
+"settings": {
+  "phonopy": {
+    "supercell_matrix": [1, 1, 1],
+    "displacement":  1.00000000000000e-02,
+    "is_diagonal": false,
+    "is_plusminus": "auto",
+    "symprec":  1.00000000000000e-05,
+    "q_mesh": [45, 45, 45],
+    "workdir": "phonopy"},
+  "machine": {
+    "basissetloc": "/Users/carbogno/Codes/2023_FHIaims/species_defaults/defaults_2020",
+    "aims_command": "mpirun -n 8 /Users/carbogno/Projects/2024_LTO/Code/build/aims.240206.scalapack.mpi.x"},
+  "files": {
+    "geometry": "geometry.in"},
+  "calculator": {
+    "name": "aims",
+    "socketio": true,
+    "parameters": {
+      "xc": "pw-lda",
+      "compute_forces": true,
+      "k_grid": [6, 6, 6],
+      "sc_accuracy_rho":  1.00000000000000e-06,
+      "relativistic": "atomic_zora scalar",
+      "output_level": "MD_light",
+      "use_pimd_wrapper": ["localhost", 10002]},
+    "kpoints": {
+      "density": 2},
+    "basissets": {
+      "default": "light"},
+    "workdir": "/Users/carbogno/Projects/2025_ASESMA/00_tutorial/02_phonons/input_mine/sc_0002/phonopy"}},
+"vibes": {
+  "version": "1.0.5"}}
+===
+{"atoms": {
+  "pbc": [true, true, true],
+  "cell": 
+    [[ 1.00000000000000e-10,  2.70441628719800e+00,  2.70441628716700e+00],
+     [ 2.70441629429400e+00,  8.30000000000000e-11,  2.70441628718400e+00],
+     [ 2.70441629425700e+00,  2.70441628717900e+00,  1.20000000000000e-10]],
+  "positions": 
+    [[ 6.51674551156008e-11,  7.07106788492524e-03,  7.07106784698236e-03],
+     [ 1.35220814709784e+00,  1.35220814354198e+00,  1.35220814358259e+00]],
+  "velocities": 
+    [[ 0.00000000000000e+00,  0.00000000000000e+00,  0.00000000000000e+00],
+     [ 0.00000000000000e+00,  0.00000000000000e+00,  0.00000000000000e+00]],
+  "symbols": [[2, "Si"]],
+  "masses": [[2, 28.085]],
+  "info": {
+    "displacement_id": 0,
+    "aims_uuid": "F9C2C7A4-56F7-4158-A3EB-3568989EE5FC"}},
+"calculator": {
+  "energy": -1.57482685389184e+04,
+  "forces": 
+    [[-1.83598571963197e-03, -9.68698575500596e-02, -9.68698597814665e-02],
+     [ 1.83598571963197e-03,  9.68698575500596e-02,  9.68698597814665e-02]],
+  "free_energy": -1.57482685389184e+04,
+  "stress": 
+    [[ 0.00000000000000e+00,  0.00000000000000e+00,  0.00000000000000e+00],
+     [ 0.00000000000000e+00,  0.00000000000000e+00,  0.00000000000000e+00],
+     [ 0.00000000000000e+00,  0.00000000000000e+00,  0.00000000000000e+00]]}}
+---

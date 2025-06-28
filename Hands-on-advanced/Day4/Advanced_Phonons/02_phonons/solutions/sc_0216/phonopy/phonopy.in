@@ -1,0 +1,48 @@
+# configfile written at 2020/08/05 14:09:14
+
+[phonopy]
+supercell_matrix:              [-3, 3, 3, 3, -3, 3, 3, 3, -3]
+displacement:                  0.01
+is_diagonal:                   False
+is_plusminus:                  auto
+symprec:                       1e-05
+q_mesh:                        [45, 45, 45]
+workdir:                       phonopy
+
+[machine]
+basissetloc:                   /home/becflokn/local/FHIaims/species_defaults
+aims_command:                  run_aims
+
+[slurm]
+tag:                           lise
+mail_type:                     all
+mail_address:                  knoop@fhi-berlin.mpg.de
+nodes:                         2
+cores:                         96
+queue:                         standard96:test
+timeout:                       60
+name:                          phonopy
+
+[files]
+geometry:                      geometry.in
+
+[calculator]
+name:                          aims
+socketio:                      True
+workdir:                       /scratch/usr/becflokn/vibes/tutorial/2_phonopy/sc_216/phonopy
+
+[calculator.parameters]
+xc:                            pw-lda
+k_grid:                        [2, 2, 2]
+sc_accuracy_rho:               1e-06
+relativistic:                  atomic_zora scalar
+compensate_multipole_errors:   False
+output_level:                  MD_light
+compute_forces:                True
+use_pimd_wrapper:              ('localhost', 10011)
+
+[calculator.kpoints]
+density:                       2
+
+[calculator.basissets]
+default:                       light

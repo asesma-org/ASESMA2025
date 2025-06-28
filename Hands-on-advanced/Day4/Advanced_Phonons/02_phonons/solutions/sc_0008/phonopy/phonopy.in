@@ -1,0 +1,37 @@
+# configfile written at 2025/06/09 18:45:45
+
+[phonopy]
+supercell_matrix:              [-1, 1, 1, 1, -1, 1, 1, 1, -1]
+displacement:                  0.01
+is_diagonal:                   False
+is_plusminus:                  auto
+symprec:                       1e-05
+q_mesh:                        [45, 45, 45]
+workdir:                       phonopy
+
+[machine]
+basissetloc:                   /Users/carbogno/Codes/2023_FHIaims/species_defaults/defaults_2020
+aims_command:                  mpirun -n 8 /Users/carbogno/Projects/2024_LTO/Code/build/aims.240206.scalapack.mpi.x
+
+[files]
+geometry:                      geometry.in
+
+[calculator]
+name:                          aims
+socketio:                      True
+workdir:                       /Users/carbogno/Projects/2025_ASESMA/00_tutorial/02_phonons/input_mine/sc_0008/phonopy
+
+[calculator.parameters]
+xc:                            pw-lda
+compute_forces:                True
+k_grid:                        [4, 4, 4]
+sc_accuracy_rho:               1e-06
+relativistic:                  atomic_zora scalar
+output_level:                  MD_light
+use_pimd_wrapper:              ('localhost', 10002)
+
+[calculator.kpoints]
+density:                       2
+
+[calculator.basissets]
+default:                       light

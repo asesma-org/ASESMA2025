@@ -1,0 +1,16 @@
+#=======================================================
+# FHI-aims file: /Users/carbogno/Projects/2025_ASESMA/00_tutorial/01_relaxation/input_mine/relaxation/geometry.in.next_step
+# Created using the Atomic Simulation Environment (ASE)
+# Mon Jun  9 17:53:46 2025
+
+# Additional information:
+#  Relaxed with BFGS, fmax=1.000 meV/AA
+#  nsteps = 2
+#  residual force  = 0.000004 meV/AA
+#  residual stress = 0.113171 meV/AA
+#=======================================================
+lattice_vector 0.0000000001000000 2.7044162871980002 2.7044162871670001 
+lattice_vector 2.7044162942940000 0.0000000000830000 2.7044162871839998 
+lattice_vector 2.7044162942569998 2.7044162871789998 0.0000000001200000 
+atom_frac 0.0000000000080000 0.0000000000050000 0.0000000000190000 Si
+atom_frac 0.2499999999920000 0.2499999999950000 0.2499999999810000 Si

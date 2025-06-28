@@ -1,0 +1,9 @@
+dict(compute_analytical_stress=True,
+     compute_forces=True,
+     k_grid=[6, 6, 6],
+     output_level='MD_light',
+     relativistic='atomic_zora scalar',
+     sc_accuracy_rho=1e-06,
+     species_dir='/Users/carbogno/Projects/2025_ASESMA/00_tutorial/01_relaxation/input_mine/relaxation/basissets',
+     use_pimd_wrapper=['localhost', 10002],
+     xc='pw-lda')

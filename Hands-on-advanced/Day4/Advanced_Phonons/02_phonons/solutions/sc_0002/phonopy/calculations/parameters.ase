@@ -1,0 +1,8 @@
+dict(compute_forces=True,
+     k_grid=[6, 6, 6],
+     output_level='MD_light',
+     relativistic='atomic_zora scalar',
+     sc_accuracy_rho=1e-06,
+     species_dir='/Users/carbogno/Projects/2025_ASESMA/00_tutorial/02_phonons/input_mine/sc_0002/phonopy/basissets',
+     use_pimd_wrapper=['localhost', 10002],
+     xc='pw-lda')

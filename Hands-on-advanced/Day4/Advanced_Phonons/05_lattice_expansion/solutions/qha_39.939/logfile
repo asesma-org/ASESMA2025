@@ -1,0 +1,113 @@
+[vibes.run]    run phonopy workflow with settings from phonopy.in
+
+[calculator]   Update aims k_grid with kpt density of 2 to [4, 4, 4]
+[calculator]   .. add `sc_accuracy_rho: 1e-06` to parameters (default)
+[calculator]   .. add `relativistic: atomic_zora scalar` to parameters (default)
+[calculator]   .. add `output_level: MD_light` to parameters (default)
+[calculator]   Add basisset `light` for atom `Si` to basissets folder.
+[calculator]   Calculator: aims
+[calculator]   settings:
+[calculator]     xc: pw-lda
+[calculator]     compute_forces: True
+[calculator]     k_grid: [4, 4, 4]
+[calculator]     sc_accuracy_rho: 1e-06
+[calculator]     relativistic: atomic_zora scalar
+[calculator]     output_level: MD_light
+[calculator]     use_pimd_wrapper: ('localhost', 10003)
+[calculator]     aims_command: /home/triqs/FHI_local/FHI_aims/fhi-aims.250320_1/build/aims_run.sh
+[calculator]     species_dir: /home/triqs/asesma2025-eg-comments/05_lattice_expansion/input/qha_39.939/phonopy/basissets
+[vibes]        Run phonopy workflow in working directory
+  /home/triqs/asesma2025-eg-comments/05_lattice_expansion/input/qha_39.939/phonopy
+[phonopy.postprocess] Start phonopy postprocess:
+[trajectory]   Parse `/home/triqs/asesma2025-eg-comments/05_lattice_expansion/input/qha_39.939/phonopy/trajectory.son`
+[son] open file:  /home/triqs/asesma2025-eg-comments/05_lattice_expansion/input/qha_39.939/phonopy/trajectory.son
+[watchdog]     seems we are not on a cluster, nothing to do for watchdog
+[watchdog]     walltime not set, disable watchdog
+[socketio]     Use SocketIO with host localhost and port 10003
+[backup]       /home/triqs/asesma2025-eg-comments/05_lattice_expansion/input/qha_39.939/phonopy/calculations does not exist, nothing to back up.
+[vibes]        Compute structure 1 of 1: working
+[vibes]        Compute structure 1 of 1: finished.
+[vibes]        Close the socket
+[vibes]        Start postprocess.
+[phonopy.postprocess] Start phonopy postprocess:
+[trajectory]   Parse `phonopy/trajectory.son`
+[son] open file:  phonopy/trajectory.son
+[trajectory]   .. time elapsed: 0.001s
+[trajectory]   .. create atoms
+[trajectory]   .. time elapsed: 0.000s
+[trajectory]   .. set raw hash
+[trajectory]   .. time elapsed: 0.000s
+[trajectory]   .. done in 0.001s
+[phonopy.postprocess] .. done in 0.147s
+[vibes]        done.
+[phonopy.postprocess] Start phonopy postprocess:
+[trajectory]   Parse `phonopy/trajectory.son`
+[son] open file:  phonopy/trajectory.son
+[trajectory]   .. time elapsed: 0.000s
+[trajectory]   .. create atoms
+[trajectory]   .. time elapsed: 0.000s
+[trajectory]   .. set raw hash
+[trajectory]   .. time elapsed: 0.000s
+[trajectory]   .. done in 0.000s
+[phonopy.postprocess] .. done in 0.140s
+q_mesh not given, use values stored in phonopy/trajectory.son: [45, 45, 45]
+[phonopy.postprocess] 
+Extract phonopy results:
+[phonopy.postprocess] .. q_mesh:   [45, 45, 45]
+[phonopy.postprocess] .. write force constants
+[phonopy.postprocess] Extract basic results:
+[phonopy.postprocess] .. write primitive cell
+[phonopy.postprocess] .. write supercell
+[phonopy.postprocess] .. write force constants to FORCE_CONSTANTS
+[phonopy.postprocess] Extract bandstructure
+[phonopy.postprocess] .. write yaml
+[phonopy.postprocess] Run mesh
+[phonopy.postprocess] Extract thermal properties
+[phonopy.postprocess] .. write yaml
+[phonopy.postprocess] Extract DOS:
+[phonopy.postprocess] .. write
+[phonopy.postprocess] .. animation/animation_G.ascii written
+[phonopy.postprocess] .. animation/animation_K.ascii written
+[phonopy.postprocess] .. animation/animation_L.ascii written
+[phonopy.postprocess] .. animation/animation_U.ascii written
+[phonopy.postprocess] .. animation/animation_W.ascii written
+[phonopy.postprocess] .. animation/animation_X.ascii written
+[phonopy.postprocess] .. all files written to phonopy/output in 4.358s
+* Message from file vibes/phonopy/postprocess.py, line 131, function check_negative_frequencies:
+--> Negative frequencies found at G = [0 0 0]:
+
+# Mode   Frequency
+    1 -4.03489e-07 THz
+    2 -3.86311e-07 THz
+    3 -3.49432e-07 THz
+[phonopy.postprocess] 
+Plot phonopy results:
+[phonopy.postprocess] Plot thermal properties
+[phonopy.postprocess] Plot bandstructure
+[phonopy.postprocess] Plot DOS:
+[phonopy.postprocess] .. all files written to phonopy/output in 9.231s
+[vibes.run]    run singlepoint calculations with settings from aims.in
+
+[calculator]   Update aims k_grid with kpt density of 2 to [6, 6, 6]
+[calculator]   .. add `sc_accuracy_rho: 1e-06` to parameters (default)
+[calculator]   .. add `relativistic: atomic_zora scalar` to parameters (default)
+[calculator]   .. add `output_level: MD_light` to parameters (default)
+[calculator]   Add basisset `light` for atom `Si` to basissets folder.
+[calculator]   Calculator: aims
+[calculator]   settings:
+[calculator]     xc: pw-lda
+[calculator]     k_grid: [6, 6, 6]
+[calculator]     sc_accuracy_rho: 1e-06
+[calculator]     relativistic: atomic_zora scalar
+[calculator]     output_level: MD_light
+[calculator]     use_pimd_wrapper: ('localhost', 10001)
+[calculator]     aims_command: /home/triqs/FHI_local/FHI_aims/fhi-aims.250320_1/build/aims_run.sh
+[calculator]     species_dir: /home/triqs/asesma2025-eg-comments/05_lattice_expansion/input/qha_39.939/aims/basissets
+[watchdog]     seems we are not on a cluster, nothing to do for watchdog
+[watchdog]     walltime not set, disable watchdog
+[socketio]     Use SocketIO with host localhost and port 10001
+[backup]       /home/triqs/asesma2025-eg-comments/05_lattice_expansion/input/qha_39.939/aims/calculations does not exist, nothing to back up.
+[vibes]        Compute structure 1 of 1: working
+[vibes]        Compute structure 1 of 1: finished.
+[vibes]        Close the socket
+[vibes]        done.

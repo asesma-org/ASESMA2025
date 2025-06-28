@@ -1,0 +1,16 @@
+[files]
+geometry:                      geometry.in
+
+[calculator]
+name:                          aims
+socketio:                      True
+
+[calculator.parameters]
+xc:                            pw-lda
+compute_forces:                true
+
+[calculator.kpoints]
+density:                       2
+
+[calculator.basissets]
+default:                       light

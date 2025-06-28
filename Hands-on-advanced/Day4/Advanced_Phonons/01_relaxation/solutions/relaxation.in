@@ -1,0 +1,34 @@
+[files]
+geometry:                      geometry.in
+
+[calculator]
+name:                          aims
+socketio:                      True
+
+[calculator.parameters]
+xc:                            pw-lda
+compute_forces:                true
+
+[calculator.kpoints]
+density:                       2
+
+[calculator.basissets]
+default:                       light
+
+[relaxation]
+driver:                        BFGS
+fmax:                          0.001
+unit_cell:                     True
+fix_symmetry:                  False
+hydrostatic_strain:            False
+constant_volume:               False
+scalar_pressure:               0.0
+decimals:                      12
+symprec:                       1e-05
+workdir:                       relaxation
+
+[relaxation.kwargs]
+maxstep:                       0.2
+logfile:                       relaxation.log
+restart:                       bfgs.restart
+

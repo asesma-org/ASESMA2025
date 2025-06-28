@@ -1,0 +1,42 @@
+mkdir: cannot create directory '/.local': Permission denied
+[vibes.run]    run phonopy workflow with settings from phonopy.in
+
+[calculator]   Update aims k_grid with kpt density of 2 to [2, 2, 2]
+[calculator]   .. add `sc_accuracy_rho: 1e-06` to parameters (default)
+[calculator]   .. add `relativistic: atomic_zora scalar` to parameters (default)
+[calculator]   .. add `compensate_multipole_errors: False` to parameters (default)
+[calculator]   .. add `output_level: MD_light` to parameters (default)
+[calculator]   Add basisset `light` for atom `Si` to basissets folder.
+[calculator]   Calculator: aims
+[calculator]   settings:
+[calculator]     xc: pw-lda
+[calculator]     k_grid: [2, 2, 2]
+[calculator]     sc_accuracy_rho: 1e-06
+[calculator]     relativistic: atomic_zora scalar
+[calculator]     compensate_multipole_errors: False
+[calculator]     output_level: MD_light
+[calculator]     compute_forces: True
+[calculator]     use_pimd_wrapper: ('localhost', 10011)
+[calculator]     aims_command: run_aims
+[calculator]     species_dir: /scratch/usr/becflokn/vibes/tutorial/2_phonopy/sc_216/phonopy/basissets
+[vibes]        Run phonopy workflow in working directory
+  /scratch/usr/becflokn/vibes/tutorial/2_phonopy/sc_216/phonopy
+[phonopy.postprocess] Start phonopy postprocess:
+[trajectory]   Parse `/scratch/usr/becflokn/vibes/tutorial/2_phonopy/sc_216/phonopy/trajectory.son`
+[son] read file:  /scratch/usr/becflokn/vibes/tutorial/2_phonopy/sc_216/phonopy/trajectory.son
+[socketio]     Use SocketIO with host localhost and port 10011
+[backup]       /scratch/usr/becflokn/vibes/tutorial/2_phonopy/sc_216/phonopy/calculations does not exists, nothing to back up.
+[vibes]        Compute structure 1 of 1: workingModule for Intel Parallel Studio XE Composer Edition (version 2018 Update 5) loaded.
+Module for Intel-MPI (version 2018.5) loaded.
+
+[vibes]        Compute structure 1 of 1: finished.
+[vibes]        Start postprocess.
+[phonopy.postprocess] Start phonopy postprocess:
+[trajectory]   Parse `phonopy/trajectory.son`
+[son] read file:  phonopy/trajectory.son
+[son] process:    |                                   |  0/2[son] process:    |||||||||||||||||||||||||||||||||||||  2/2[trajectory]   .. time elapsed: 0.002s
+[trajectory]   .. create atoms
+[trajectory]   .. time elapsed: 0.812s
+[trajectory]   .. done in 0.814s
+[phonopy.postprocess] .. done in 1.909s
+[vibes]        done.
