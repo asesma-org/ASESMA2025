@@ -46,6 +46,10 @@ edited by Miquel Marques, Neepa Maitra, Fernando Noguiera, E.K.U. Gross,
 and Angel Rubio, Lecture Notes in Physics, Vol. 837 (Springer Verlag: 
 2011), p. 279.  http://arxiv.org/abs/1102.1849.
 
+[CFK2010] J. Carmona-Espindola, R. Flores-Moreno, and A.M. Koster,
+"Time-dependent auxiliary density perrturbation theory", J. Chem. Phys.
+133, 084102 (2010).
+
 [C2009] Mark E. Casida, "Review: Time-Dependent Density-Functional Theory 
 for Molecules and Molecular Solids", J. Mol. Struct. (Theochem) 914, 3 
 (2009).
