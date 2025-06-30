@@ -5,6 +5,10 @@
 This directory consists of a set of collected articles for those
 who would like to know more about TD-DFT and/or the deMon programs.
 
+[HK2023] L.I. Hernandez-Segura and A.M. Koster, "Efficient implementation 
+of time-dependent auxiliary density functional theory", J. Chem. Phys. 158, 
+024108 (2023).
+
 [S22] D.R. Salahub, "Tutorial Review: Multiscale molecular modelling: 
 from electronic structure to dynamics of nanosystems and beyond", 
 Phys. Chem. Chem.  Phys. 24, 9051 (2022).
