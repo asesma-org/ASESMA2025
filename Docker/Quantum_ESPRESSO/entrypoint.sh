@@ -17,8 +17,13 @@ else
   echo 'triqs ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
   export HOME=/home/triqs
+
+  # CC: Set up .vibesrc if not there, yet
+  if [ ! -f $HOME/.vibesrc ]; then
+    cp /source/vibes/.vibesrc ${HOME}/
+  fi
   
   # run the original command and keep all ENV variables
-  exec sudo -E -H -u triqs PATH=$PATH XDG_CACHE_HOME=/home/triqs/.cache PYTHONPATH=$PYTHONPATH INTELPATH=$INTELPATH LD_LIBRARY_PATH=$LD_LIBRARY_PATH PATH=$PATH CPATH=$CPATH MKLROOT=$MKLROOT "$@"
-  
+  exec sudo -E -H -u triqs PATH=$PATH XDG_CACHE_HOME=/home/triqs/.cache PYTHONPATH=$PYTHONPATH INTELPATH=$INTELPATH LD_LIBRARY_PATH=$LD_LIBRARY_PATH PATH=$PATH CPATH=$CPATH MKLROOT=$MKLROOT PATH=$PATH:/python_source/site-packages/bin "$@"
+
 fi
