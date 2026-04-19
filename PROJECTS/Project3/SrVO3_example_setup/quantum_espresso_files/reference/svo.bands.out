@@ -1,0 +1,63 @@
+
+     Program BANDS v.7.2 starts on 16Jun2025 at 20:22: 0 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+         "P. Giannozzi et al., J. Chem. Phys. 152 154105 (2020);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI & OpenMP), running on       4 processor cores
+     Number of MPI processes:                 4
+     Threads/MPI process:                     1
+
+     MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =       4
+     8292 MiB available memory on the printing compute node when the environment starts
+
+
+     Reading xml data from directory:
+
+     ./QE_tmp/svo.save/
+
+     IMPORTANT: XC functional enforced from input :
+     Exchange-correlation= PBE
+                           (   1   4   3   4   0   0   0)
+     Any further DFT definition will be discarded
+     Please, verify this is what you really want
+
+
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min         765     251     74                31640     6075     989
+     Max         766     252     76                31641     6078     990
+     Sum        3061    1005    301               126563    24303    3959
+
+     Using Slab Decomposition
+
+
+     Check: negative core charge=   -0.000002
+
+     negative rho (up, down):  6.712E-02 0.000E+00
+     Reading collected, re-writing distributed wavefunctions
+     high-symmetry point:  0.4978 0.4978 0.4978   x coordinate   0.0000
+     high-symmetry point:  0.0000 0.0000 0.0000   x coordinate   0.8622
+     high-symmetry point:  0.4978 0.0000 0.0000   x coordinate   1.3600
+     high-symmetry point:  0.4978 0.4978 0.0000   x coordinate   1.8578
+     high-symmetry point:  0.0000 0.0000 0.0000   x coordinate   2.5619
+
+     Plottable bands (eV) written to file svo_bands.dat.gnu
+     Bands written to file svo_bands.dat
+
+     BANDS        :      0.97s CPU      1.15s WALL
+
+
+   This run was terminated on:  20:22: 2  16Jun2025            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=

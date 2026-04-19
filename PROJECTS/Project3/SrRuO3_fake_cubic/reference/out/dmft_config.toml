@@ -1,0 +1,37 @@
+[general]
+seedname = "sro"
+jobname = "out"
+
+#mu_initial_guess = 0.006120
+calc_mu_method = "brent"
+magnetic = true
+magmom = [1]
+
+n_iw = 1001
+beta = 40
+w_range = [-10, 10]
+eta = 0.05
+n_w = 1001
+
+#prec_mu = 0.001
+#magnetic = true
+
+
+h_int_type = "kanamori"
+U = 3.0
+J = 0.3
+
+calc_energies = true
+
+n_iter_dmft = 10
+
+dc_type = "cHeld"
+dc = true
+dc_dmft = false
+
+[solver]
+type = "hartree"
+with_fock = true
+force_real = true
+one_shot = true
+

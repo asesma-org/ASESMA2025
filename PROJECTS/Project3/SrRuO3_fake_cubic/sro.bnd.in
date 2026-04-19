@@ -1,0 +1,60 @@
+&control
+   calculation        = 'bands',
+   restart_mode       = 'from_scratch',
+   prefix             = 'sro', 
+   verbosity          = 'high',
+   pseudo_dir         = './Pseudos/',
+   outdir             = './QE_tmp/',
+   
+/ 
+&system 
+   ibrav              = 0,
+   nat                = 5,
+   ntyp               = 3,
+   ecutwfc            = 60.0,
+   ecutrho            = 720.0,
+   occupations        = 'smearing',
+   degauss            = 0.02,
+   smearing           = 'm-p',
+   nbnd = 50,
+/ 
+&electrons 
+   conv_thr           = 1.0d-10,
+   mixing_beta        = 0.1,
+   mixing_mode        = 'local-TF'
+   diagonalization = 'paro'
+/
+
+&IONS
+/
+&CELL
+/
+
+ATOMIC_SPECIES 
+   Sr	87.62		sr_pbesol_v1.uspp.F.UPF
+   Ru	50.9415		Ru_ONCV_PBEsol-1.0.upf
+   O	15.9994		O.pbesol-n-kjpaw_psl.0.1.UPF 
+   
+
+
+CELL_PARAMETERS (angstrom)
+   3.908100056   0.000000000   0.000000000
+   0.000000000   3.908100056   0.000000000
+   0.000000000   0.000000000   3.908100056
+
+ATOMIC_POSITIONS (crystal)
+Sr       0.000000000   0.000000000   0.000000000
+Ru        0.500000000   0.500000000   0.500000000
+O        0.500000000   0.500000000   0.000000000
+O        0.500000000   0.000000000   0.500000000
+O        0.000000000   0.500000000   0.500000000
+
+
+K_POINTS crystal_b
+5             ! Total number of segments
+0.0 0.0 0.0   15  ! Gamma to X
+0.5 0.0 0.0   15  ! X to R
+0.5 0.5 0.5   15  ! R to Gamma
+0.0 0.0 0.0   15  ! Gamma to R
+0.5 0.5 0.5   15  ! R to X
+0.5 0.0 0.0    1  ! Final point, usually 1

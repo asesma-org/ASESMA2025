@@ -1,0 +1,59 @@
+
+     Program BANDS v.7.2 starts on 16Jun2025 at 22: 0:20 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+         "P. Giannozzi et al., J. Chem. Phys. 152 154105 (2020);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI & OpenMP), running on       1 processor cores
+     Number of MPI processes:                 1
+     Threads/MPI process:                     1
+
+     MPI processes distributed on     1 nodes
+     7224 MiB available memory on the printing compute node when the environment starts
+
+
+     Reading xml data from directory:
+
+     ./QE_tmp/sro.save/
+     file O.pbesol-n-kjpaw_psl.0.1.UPF: wavefunction(s)  2P renormalized
+
+     IMPORTANT: XC functional enforced from input :
+     Exchange-correlation= PBESOL
+                           (   1   4  10   8   0   0   0)
+     Any further DFT definition will be discarded
+     Please, verify this is what you really want
+
+
+     G-vector sticks info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Sum        3125    1041    305               131491    25341    4139
+
+     Using Slab Decomposition
+
+
+     negative rho (up, down):  6.621E-02 0.000E+00
+     Reading collected, re-writing distributed wavefunctions
+     high-symmetry point:  0.0000 0.0000 0.0000   x coordinate   0.0000
+     high-symmetry point:  0.5000 0.0000 0.0000   x coordinate   0.5000
+     high-symmetry point:  0.5000 0.5000 0.5000   x coordinate   1.2071
+     high-symmetry point:  0.0000 0.0000 0.0000   x coordinate   2.0731
+     high-symmetry point:  0.5000 0.5000 0.5000   x coordinate   2.9392
+
+     Plottable bands (eV) written to file sro_bands.dat.gnu
+     Bands written to file sro_bands.dat
+
+     BANDS        :      2.18s CPU      2.69s WALL
+
+
+   This run was terminated on:  22: 0:23  16Jun2025            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=

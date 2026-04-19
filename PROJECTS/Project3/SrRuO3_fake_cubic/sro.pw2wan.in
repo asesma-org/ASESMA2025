@@ -1,0 +1,8 @@
+&inputpp 
+   prefix             = 'sro'
+   outdir             = './QE_tmp/',
+   seedname           = 'sro'
+   write_mmn          = .true.
+   write_amn          = .true.
+   write_unk          = .false.
+/
