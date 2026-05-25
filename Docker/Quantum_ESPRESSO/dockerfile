@@ -95,7 +95,24 @@ RUN cd /source \
   && cmake --install _build 
 
 
-
+## CC: FHI-aims and FHI-vibes
+# Create an empty folder to pour FHI-aims binaries into
+# and install FHI-vibes sources in /source and package into /python_source/site-packages
+RUN apt install -y --no-install-recommends libmkl-scalapack-lp64 libmkl-blacs-openmpi-lp64 \
+  && cd /source \
+  && mkdir FHIaims \ 
+  && git clone https://gitlab.com/vibes-developers/vibes.git \
+  && cd vibes \
+  && pip install --upgrade --target /python_source/site-packages .
+# N.B. --upgrade needed to ensure that /python_source/site-packages/bin is updated as well
+COPY FHIaims.settings.gcc.cmake     /source/FHIaims/FHIaims.settings.gcc.cmake     
+COPY FHIaims.settings.gcc.mkl.cmake /source/FHIaims/FHIaims.settings.gcc.mkl.cmake 
+COPY vibesrc                        /source/vibes/.vibesrc                       
+COPY FHIaims.TODO                   /source/FHIaims/TODO                       
+# CC: vibesrc is copied into homefoled in ENTRYPOINT, 
+#     TODO is just a list of things that need to be on site
+#### IMPORTANT: This also installs ASE Version 3.22. If you need to switch to a different/newer
+####            version, please contact carbogno@fhi-berlin.mpg.de, so that I can update my tutorials
 
 ## create work dir
 RUN mkdir /work 
